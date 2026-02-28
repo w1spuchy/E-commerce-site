@@ -165,20 +165,27 @@ main
 #product-section
 {
     display: flex;
-    gap: 20px;
+    gap: 24px;
 }
 
 #filters-side-section
 {
     display: none;
+    min-width: 256px;
+}
+
+.filters-side-section-container
+{
     flex-direction: column;
     box-sizing: border-box;
-    height: auto;
-    width: 256px;
-    padding: 24px;
+    position: sticky;
+    top: 20px;
+    max-height: 400px;
+    width: 100%;
     background-color: #FFF;
     border: 1px solid #d1d5db7d;
     border-radius: 8px;
+    padding: 24px;
 }
 
 .filters-label
@@ -308,8 +315,8 @@ input[type="range"]::-moz-range-thumb{
     flex-wrap: wrap;
     position: relative;
     box-sizing: border-box;
-    width: 1024px;
-    gap: 20px;
+    width: 100%;
+    gap: 24px;
 }
 
 
@@ -324,6 +331,11 @@ input[type="range"]::-moz-range-thumb{
     #filters-side-section
     {
         display: flex;
+    }
+
+    .product-cards-section
+    {
+        width: calc(100% - 280px);
     }
 }
 
