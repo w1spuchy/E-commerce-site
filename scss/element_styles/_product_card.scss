@@ -1,0 +1,19 @@
+.product-card
+{
+    border-radius: 8px;
+    border: 1px solid black;
+    height: 250px;
+    flex: 0 1 100%;
+}
+
+@media (min-width: 640px) {
+    .product-card{
+        flex: 0 1 calc(50% - 20px);
+    }
+}
+
+@media (min-width: 1024px) {
+    .product-card{
+        flex: 0 1 calc(33.3% - 20px);
+    }
+}

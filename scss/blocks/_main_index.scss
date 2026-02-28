@@ -1,5 +1,13 @@
 @import "../element_styles/colors";
 @import "../element_styles/topology";
+
+.side-bar-container
+{
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+}
+
 main
 {
     padding: 32px;
@@ -38,7 +46,7 @@ main
     flex-direction: column;
     align-items: start;
     gap: 1rem;
-    height: 36px;
+    height: auto;
     margin: 0px 0px 24px;
 }
 
@@ -133,6 +141,7 @@ main
     max-height: 0px;
     overflow: hidden;
     transition: 0.4s ease-in-out;
+    z-index: 100;
 }
 
 .select.active .options
@@ -153,11 +162,18 @@ main
     background-color: #d1cfcf9a;
 }
 
+#product-section
+{
+    display: flex;
+    gap: 20px;
+}
+
 #filters-side-section
 {
     display: none;
     flex-direction: column;
     box-sizing: border-box;
+    height: auto;
     width: 256px;
     padding: 24px;
     background-color: #FFF;
@@ -285,6 +301,18 @@ input[type="range"]::-moz-range-thumb{
     cursor: pointer;
 }
 
+.product-cards-section
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    box-sizing: border-box;
+    width: 1024px;
+    gap: 20px;
+}
+
+
 
 @media (min-width: 1024px)
 {
@@ -306,5 +334,6 @@ input[type="range"]::-moz-range-thumb{
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        height: 36px;
     }
 }

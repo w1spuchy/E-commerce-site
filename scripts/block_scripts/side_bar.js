@@ -4,7 +4,6 @@ export function initSidebar(){
     const filterButton = document.querySelector("#filter-button");
 
     filterButton.addEventListener("click", ()=>{
-        console.log("click");
         overlay.classList.toggle("active");        
         sideBar.classList.toggle("active");        
     })
