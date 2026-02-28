@@ -1,0 +1,36 @@
+body
+{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+a
+{
+    text-decoration: none;
+    color: inherit;
+}
+
+@media (min-width: 640px) {
+    #desktop-header, #main-container, footer{
+        margin: 0px clamp(0rem, -17.5rem + 43.75vw, 3.5rem);
+    }
+}
+
+@media (min-width: 768px) {
+    #desktop-header, #main-container, footer {
+        margin: 0px clamp(0rem, -22.5rem + 46.88vw, 7.5rem);
+    }
+}
+
+@media (min-width: 1024px) {
+    #desktop-header, #main-container, footer {
+        margin: 0px clamp(0rem, -30rem + 46.88vw, 7.5rem);
+    }
+}
+
+@media (min-width: 1280px) {
+    #desktop-header, #main-container, footer {
+        margin: 0;
+    }
+}

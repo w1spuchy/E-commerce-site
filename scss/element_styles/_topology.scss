@@ -1,0 +1,25 @@
+@mixin link-text-hover
+{
+    color:#3182ce;
+}
+
+@mixin small-text
+{
+    margin: 0;
+    font-size: 0.875rem;
+    color: $light-text-color;
+}
+
+@mixin medium-text
+{
+    margin: 0px;
+    font-size: 1rem;
+    color: $light-text-color;
+}
+
+@mixin title-text
+{
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin: 0px 0px 8px;
+}

@@ -1,0 +1,23 @@
+@mixin rounded-button-base
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    background-color: transparent;
+    user-select: none;
+    img
+    {
+        width: 20px; 
+        height: 20px;
+    }
+}
+
+@mixin rounded-button-base-hover
+{
+    background-color: #F3F4F6;
+    transition: background-color 0.3s ease;
+}
