@@ -22,7 +22,9 @@ export async function fillCardSection(sectionId, filter)
                 <div class="product-description-container">
                     <div class="product-name">${product.name}</div>
                     <div class="product-rating">
-                        ${renderRating(product.rating)}
+                        <div class="star-rating">
+                            ${renderRating(product.rating)}
+                        </div>
                         <div class="digital-rating">(${product.rating})</div>
                     </div>
                     <div class="product-price-section">
@@ -32,7 +34,6 @@ export async function fillCardSection(sectionId, filter)
                 </div>
             </div>
         `;
-        console.log(productCard);
         section.appendChild(productCard);
     });
 }
@@ -40,23 +41,22 @@ export async function fillCardSection(sectionId, filter)
 function renderRating(rating)
 {
     const ratingContainer = document.createElement('div');
-    ratingContainer.classList.add('star-rating');
-    const fullStar = document.createElement('i');
-    fullStar.classList = 'fas fa-star';
-    const halfStar = document.createElement('i');
-    halfStar.classList = 'fas fa-star-half-alt';
-    const emptyStar = document.createElement('i');
-    emptyStar.classList = 'far fa-star';
-
+    
     for(let i = 0; i < Math.floor(rating); i++){
+        const fullStar = document.createElement('i');
+        fullStar.classList = 'fas fa-star';
         ratingContainer.appendChild(fullStar);
     }
     if(rating % 1 != 0){
+        const halfStar = document.createElement('i');
+        halfStar.classList = 'fas fa-star-half-alt';
         ratingContainer.appendChild(halfStar);
     }
     for(let i = 0; i < (5-Math.ceil(rating)); i++){
+        const emptyStar = document.createElement('i');
+        emptyStar.classList = 'far fa-star';
         ratingContainer.appendChild(emptyStar);
     }
 
-    return ratingContainer;
+    return ratingContainer.innerHTML;
 }
