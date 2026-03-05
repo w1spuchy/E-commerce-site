@@ -29,6 +29,39 @@ footer a:hover
     @include link-text-hover;
 }
 
+.footer-block
+{
+    width: 100%;
+};
+
+.upper-footer
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+
+.footer-logo-container
+{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.upper-footer .logo-background
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    background-image: linear-gradient(to bottom right, #2563eb, #9333ea);
+    border-radius: 10px;
+}
+
 .lower-footer
 {
     display: flex;
@@ -53,4 +86,21 @@ footer a:hover
     display: flex;
     flex-direction: row;
     gap: 16px;
+}
+
+
+@media (min-width: 768px)
+{
+    .footer-block
+    {
+        width: calc(50% - 16px);
+    };
+}
+
+@media (min-width: 1024px)
+{
+    .footer-block
+    {
+        width: calc(25% - 24px);
+    }
 }
