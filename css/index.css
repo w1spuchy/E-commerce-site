@@ -716,8 +716,15 @@ footer a:hover {
   color: #3182ce;
 }
 
+.footer-links-list li {
+  margin-bottom: 8px;
+}
+
 .footer-block {
   width: 100%;
+}
+.footer-block p {
+  margin-bottom: 16px;
 }
 
 .upper-footer {
@@ -725,6 +732,7 @@ footer a:hover {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 32px;
+  min-height: 227px;
 }
 
 .footer-logo-container {
@@ -743,6 +751,71 @@ footer a:hover {
   width: 40px;
   background-image: linear-gradient(to bottom right, #2563eb, #9333ea);
   border-radius: 10px;
+}
+
+.footer-media-links-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  height: 36px;
+}
+.footer-media-links-container a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #e5e7eb;
+  height: 36px;
+  width: 36px;
+  border: none;
+  border-radius: 50%;
+  transition: 0.4s ease;
+}
+.footer-media-links-container a i {
+  color: inherit;
+}
+.footer-media-links-container a:hover {
+  background-color: #2563eb;
+  color: white;
+}
+
+.footer-customer-service-container .support-info-block {
+  margin-top: 16px;
+}
+.footer-customer-service-container .support-info-block p {
+  margin: 0;
+}
+
+.footer-newsletter-container .input-email-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+.footer-newsletter-container .input-email-section #footer-email-input {
+  display: flex;
+  width: 100%;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: solid 1px rgba(0, 0, 0, 0.1019607843);
+}
+.footer-newsletter-container .input-email-section #footer-newsletter-button {
+  width: 100%;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #2563eb;
+  color: white;
+  font-weight: 600;
+  transition: background-color ease 0.3s;
+}
+.footer-newsletter-container .input-email-section #footer-newsletter-button:hover {
+  cursor: pointer;
+  background-color: #1d4ed8;
 }
 
 .lower-footer {
