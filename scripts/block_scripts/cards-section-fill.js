@@ -5,6 +5,7 @@ export async function fillCardSection(sectionId)
     const response = await fetch('../JSON data/products.json');
     const data = await response.json();
     const section = document.getElementById(sectionId);
+    section.innerHTML = '';
     let filteredProducts = filter(data.products);
     if(filteredProducts == null){
         filteredProducts = data.products;

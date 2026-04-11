@@ -1,7 +1,7 @@
 import { fillCardSection } from "./cards-section-fill.js";
 export function initCheckbox()
 {
-    const cardsSections = document.querySelectorAll('product-cards-section');
+    const cardsSections = document.querySelectorAll('.product-cards-section');
     const checkboxItems = document.querySelectorAll('.checkbox-item');
     let checkboxInputs = [];
     checkboxItems.forEach(item => {
