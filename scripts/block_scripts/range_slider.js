@@ -1,3 +1,5 @@
+import { fillCardSection } from "./cards-section-fill.js";
+
 export function initRangeSlider(){
     const rangeInputs = document.querySelectorAll(".range-input input");
     const priceContainers = document.querySelectorAll(".price-values-container");
@@ -14,7 +16,7 @@ export function initRangeSlider(){
     const maxRanges = Array.from(rangeInputs).filter(input => input.classList.contains("range-max"));
     const priceMinOutputs = priceOutputs.filter(out => out.classList.contains("price-min-value"));
     const priceMaxOutputs = priceOutputs.filter(out => out.classList.contains("price-max-value"));
-    const priceGap = 2000;
+    const priceGap = 300;
     
     priceOutputs.forEach(output=>{
         if(output.className === "price-min-value"){
@@ -31,6 +33,7 @@ export function initRangeSlider(){
 
             let minVal;
             let maxVal;
+
 
             if(e.target.className === "range-min")
             {
@@ -71,6 +74,11 @@ export function initRangeSlider(){
                     maxRanges.forEach(maxrange => maxrange.value = e.target.value);
                 }
             }
+
+            const cardSections = document.querySelectorAll('.product-cards-section');
+            cardSections.forEach( section =>{
+                fillCardSection(section.id);
+            });
         });
     })
 };

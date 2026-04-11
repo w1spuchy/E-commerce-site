@@ -1,13 +1,12 @@
-export async function fillCardSection(sectionId, filter)
+import { filter } from "./filter.js";
+
+export async function fillCardSection(sectionId)
 {
     const response = await fetch('../JSON data/products.json');
     const data = await response.json();
     const section = document.getElementById(sectionId);
-    let filteredProducts
-    if(filter != null){
-        filteredProducts = filter(data.products);
-    }
-    else{
+    let filteredProducts = filter(data.products);
+    if(filteredProducts == null){
         filteredProducts = data.products;
     }
 
