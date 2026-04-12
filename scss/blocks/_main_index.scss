@@ -169,6 +169,8 @@ main
     gap: 24px;
 }
 
+
+
 #filters-side-section
 {
     display: none;
@@ -318,9 +320,20 @@ input[type="range"]::-moz-range-thumb{
     box-sizing: border-box;
     width: 100%;
     max-width: 1184px;
+    min-height: 483px;
     gap: 24px;
 }
 
+.empty-list-message
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    padding: 50px 0px 0px;
+
+}
 
 
 @media (min-width: 1024px)

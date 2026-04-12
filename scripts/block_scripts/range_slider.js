@@ -19,7 +19,7 @@ export function initRangeSlider(){
     const priceGap = 300;
     
     priceOutputs.forEach(output=>{
-        if(output.className === "price-min-value"){
+        if(output.classList.contains("price-min-value")){
             output.innerHTML = "$" + parseInt(minRanges[0].min);
         }
         else

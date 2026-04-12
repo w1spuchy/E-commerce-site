@@ -36,6 +36,20 @@ export async function fillCardSection(sectionId)
         `;
         section.appendChild(productCard);
     });
+
+    if(filteredProducts.length == 0)
+    {
+        const emptyListMessage = document.createElement('div');
+        emptyListMessage.classList.add('empty-list-message');
+
+        emptyListMessage.innerHTML = 
+        `
+            <div class="title-text" style="margin: 0px 0px 8px; font-size: 18px">No products found</div>
+            <div class="description-text" style="font-size: 14px;">Try adjusting your filters</div>
+        `;
+
+        section.appendChild(emptyListMessage);
+    }
 }
 
 function renderRating(rating)
