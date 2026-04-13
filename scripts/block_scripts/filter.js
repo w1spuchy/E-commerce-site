@@ -8,7 +8,18 @@ export function filter(products)
     selectedRatings = selectedRatings.filter((item, index)=>{
                                 return selectedRatings.indexOf(item) === index;
                             });
-    const minRating = selectedRatings === null ? 0 : Math.min(selectedRatings);                        
+    
+    let minRating;
+    if(selectedRatings.length == 0)
+    {
+        minRating = 0;
+    }
+    else
+    {
+        minRating = selectedRatings.reduce((min, curr)=>{
+            return curr < min ? curr : min;
+        });
+    }                 
 
     const priceMinDiv = document.querySelector('.price-min-value'); 
     const priceMaxDiv = document.querySelector('.price-max-value'); 
