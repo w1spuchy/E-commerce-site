@@ -4,7 +4,7 @@
 header
 {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     position: sticky;
@@ -14,7 +14,6 @@ header
     background-color: white;
     border-bottom: none;
     max-width: 100%;
-    min-height: 65px;
     box-sizing: border-box;
     box-shadow: 1px 2px 6px $light-shadow;
     z-index: 100;
@@ -96,48 +95,75 @@ header
     gap: 10px;
 }
 
-#header-search-section
+#header-search-button
 {
     position: relative;
 }
 
-#header-search-bar
-{
-    position: absolute;
-    z-index: -1;
-    display: flex;
-    align-items: center;
-    right: 0px;
-    height: 40px;
-    border: none;
-    border-radius: 20px;
-    padding-right: 45px;
-    padding-left: 8px;
-    max-width: 0px;
-    transition: 0.4s ease-in-out;
-}
-
-#header-search-input
-{
-    border: none;
-    outline: none;
-    max-width: 100px;
-}
 
 #burger-menu-button
 {
     display: none;
 }
 
-#search-checkbox:checked~#header-search-bar
+#header-search-section
 {
-    box-shadow: 1px 2px 6px $light-shadow;
-    max-width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; 
+    width: 100%;
 }
 
-#search-checkbox:not(:checked)~#header-search-bar
+#header-search-bar
 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top: 30px;
+    z-index: 100;
+    align-items: center;
+    width: 60%;
+    border: none;
     opacity: 0;
+    pointer-events: none;
+    transition: 0.4s ease-in-out all;
+}
+
+#header-search-bar.show
+{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.search-wrapper
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 8px 5px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 2px 6px $light-shadow;
+}
+
+#header-search-input
+{
+    border: none;
+    outline: none;
+    width: 100%;
+    background-color: transparent
+}
+
+
+#search-result
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .rounded-button
@@ -151,16 +177,6 @@ header
 }
 
 @media screen and (max-width: 768px) {
-    header
-    {
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    #search-checkbox:checked~#header-search-bar
-    {
-        max-width: 120px;
-    }
     
     #burger-menu-button
     {
@@ -175,7 +191,7 @@ header
     #header-nav-mobile
     {
         display: flex;
-        position: static;
+        position: relative;
         max-height: 0;
         width: 100%;
         overflow: hidden;

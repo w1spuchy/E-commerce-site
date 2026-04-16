@@ -5,6 +5,7 @@ import {fillCardSection} from "../scripts/block_scripts/cards-section-fill.js";
 import { initCheckbox } from "./block_scripts/checkbox.js";
 import { initClearFiltersButtons } from "./block_scripts/filter.js";
 import { initProductSorting } from "./block_scripts/product_sort.js";
+import { initSearch } from "./block_scripts/search.js";
 
 fillCardSection('all-products-section');
 initRangeSlider();
@@ -13,3 +14,4 @@ initSidebar();
 initCheckbox();
 initClearFiltersButtons();
 initProductSorting();
+initSearch();

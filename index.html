@@ -83,12 +83,8 @@
                 </ul>
             </nav>
             <div id="header-actions-bar">
-                <div id="header-search-section">
-                    <input type="checkbox" id="search-checkbox" style="display: none;">
-                    <div id="header-search-bar">
-                        <input type="text" id="header-search-input" placeholder="Search">
-                    </div>
-                    <label for="search-checkbox" id="header-search-button" class="rounded-button">
+                <div id="header-search">
+                    <label id="header-search-button" class="rounded-button">
                         <img src="./icons/Search.ico" alt="Search">
                     </label>
                 </div>
@@ -117,6 +113,17 @@
                 </li>
             </ul>
         </nav>
+        <div id="header-search-section">
+            <div id="header-search-bar">
+                <div class="search-wrapper">
+                    <input type="text" id="header-search-input" placeholder="Search">
+                </div>
+                <div class="search-wrapper">
+                    <ul id="search-result">
+                    </ul>
+                </div>
+            </div>
+        </div>
     </header>
     <main>
         <div id="main-container">
