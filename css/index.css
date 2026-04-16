@@ -341,7 +341,6 @@ header {
 #search-result-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 
 .no-search-res-mess {
@@ -352,6 +351,35 @@ header {
   margin: 0px;
   font-size: 1rem;
   color: #364153;
+}
+
+.search-res-item {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: white;
+  transition: 0.2s ease background-color;
+}
+
+.search-res-item:hover {
+  background-color: #dedede;
+}
+
+.search-res-item-photo-section {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 2px;
+}
+
+.search-res-item-info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
 }
 
 .rounded-button {

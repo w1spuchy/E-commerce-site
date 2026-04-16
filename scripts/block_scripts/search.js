@@ -1,3 +1,5 @@
+import { renderRating } from "./cards-section-fill.js";
+
 class Node{
     constructor()
     {
@@ -76,7 +78,23 @@ export async function initSearch()
                 const productItem = document.createElement('li');
                 productItem.classList.add('search-res-item');
                 productItem.innerHTML = `
-                    ${res}
+                    <div class='search-res-item-photo-section'>
+                        <img src="${res.images[0]}" style="height: 48px; width: 48px;
+                                                        border-radius: 8px;">
+                    </div>
+                    <div class='search-res-item-info-section'>
+                        <div style="font-size: 16px; font-weight: 600;">
+                            ${res.name}
+                        </div>
+                        <div style="display: flex; flex-direction:row; justify-content: space-between;">
+                            <div style="font-weight: 600; color: #155dfc">
+                                $${res.price}
+                            </div>
+                            <div style="color: #fdc700;">
+                                ${renderRating(res.rating)}
+                            </div>
+                        </div>
+                    </div>
                 `
                 searchResultList.appendChild(productItem);
             })

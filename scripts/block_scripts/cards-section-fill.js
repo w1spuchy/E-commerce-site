@@ -75,7 +75,7 @@ export async function fillCardSection(sectionId, sortOrder)
     }
 }
 
-function renderRating(rating)
+export function renderRating(rating)
 {
     const ratingContainer = document.createElement('div');
     
