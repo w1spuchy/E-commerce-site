@@ -1,22 +1,27 @@
 import { filter } from "./filter.js";
 
+let cachedProducts = null;
+
 export async function fillCardSection(sectionId, sortOrder)
 {
-    const response = await fetch('../JSON data/products.json');
-    const data = await response.json();
+    if (!cachedProducts) {
+        const response = await fetch('../JSON data/products.json');
+        const data = await response.json();
+        cachedProducts = data;
+    }
     
     if(sortOrder != null)
     {
         switch(sortOrder)
         {
             case 'sort-by-name':
-                data.products.sort((a,b) => a.name.localeCompare(b.name));
+                cachedProducts.products.sort((a,b) => a.name.localeCompare(b.name));
                 break;
             case 'sort-by-price':
-                data.products.sort((a,b) => a.price - b. price);
+                cachedProducts.products.sort((a,b) => a.price - b. price);
                 break;
             case 'sort-by-price-rev':
-                data.products.sort((a,b) => b.price - a. price);
+                cachedProducts.products.sort((a,b) => b.price - a. price);
                 break;
             default:
                 return
@@ -24,9 +29,9 @@ export async function fillCardSection(sectionId, sortOrder)
     }
     const section = document.getElementById(sectionId);
     section.innerHTML = '';
-    let filteredProducts = filter(data.products);
+    let filteredProducts = filter(cachedProducts.products);
     if(filteredProducts == null){
-        filteredProducts = data.products;
+        filteredProducts = cachedProducts.products;
     }
 
     filteredProducts.forEach(product => {
