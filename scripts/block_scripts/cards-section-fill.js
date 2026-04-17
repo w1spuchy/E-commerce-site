@@ -34,6 +34,22 @@ export async function fillCardSection(sectionId, sortOrder)
         filteredProducts = cachedProducts.products;
     }
 
+    const pagesNumber = Math.ceil(filteredProducts.length / 6);
+    const pagesContent = [];
+    for(let i = 0; i < pagesNumber; i++)
+    {
+        const pageProducts = [];
+        const productsOnPage = (filteredProducts.length - 6*i < 6) ? filteredProducts.length - 6*i : 6;
+        for(let j = 0; j < productsOnPage; j++)
+        {
+            pageProducts[j] = filteredProducts[i*6 + j];
+        }
+        pagesContent.push(pageProducts);
+    }
+
+    console.log(pagesContent);
+
+
     filteredProducts.forEach(product => {
         const productCard = document.createElement('a');
         productCard.classList.add('product-card');

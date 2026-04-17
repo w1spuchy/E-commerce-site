@@ -133,6 +133,182 @@
         "Battery": "10 hours",
         "Stylus Support": "Yes"
       }
+    },
+    {
+      "id": 7,
+      "name": "Mechanical Gaming Keyboard",
+      "category": "ACCESSORIES",
+      "rating": 4.5,
+      "reviews_count": 812,
+      "price": 159.99,
+      "images": [
+          "./images/Mechanical Gaming Keyboard.avif",
+          "./images/Mechanical Gaming Keyboard.avif",
+          "./images/Mechanical Gaming Keyboard.avif"
+      ],
+      "description": "Ultra-responsive mechanical switches with customizable RGB lighting. Built for durability and speed in competitive gaming.",
+      "specifications": {
+        "Switch Type": "Mechanical Blue",
+        "Backlight": "RGB 16.8M colors",
+        "Connection": "Wired USB-C",
+        "Keycaps": "PBT Double-shot",
+        "Layout": "Tenkeyless (TKL)",
+        "Polling Rate": "1000Hz"
+      }
+    },
+    {
+      "id": 8,
+      "name": "4K Ultra-Wide Monitor",
+      "category": "COMPUTERS",
+      "rating": 4.5,
+      "reviews_count": 425,
+      "price": 899.99,
+      "images": [
+        "./images/4K Ultra-Wide Monitor.avif",
+        "./images/4K Ultra-Wide Monitor.avif",
+        "./images/4K Ultra-Wide Monitor.avif"
+      ],
+      "description": "Expand your workspace with a curved 34-inch ultra-wide display. Incredible color accuracy for designers and gamers alike.",
+      "specifications": {
+        "Resolution": "3440 x 1440",
+        "Refresh Rate": "144Hz",
+        "Panel Type": "IPS",
+        "Response Time": "1ms",
+        "Brightness": "400 nits",
+        "Curvature": "1900R"
+      }
+    },
+    {
+      "id": 9,
+      "name": "Smart Home Hub Max",
+      "category": "SMART HOME",
+      "rating": 4.5,
+      "reviews_count": 520,
+      "price": 229.99,
+      "images": [
+        "./images/Smart Home Hub Max.avif",
+        "./images/Smart Home Hub Max.avif",
+        "./images/Smart Home Hub Max.avif"
+      ],
+      "description": "Control your entire home with a single touch or voice command. Integrated speaker and smart display for your security and entertainment.",
+      "specifications": {
+        "Display": "10\" HD Touch",
+        "Camera": "6.5MP Wide",
+        "Voice Assistant": "Google/Alexa",
+        "Connectivity": "Wi-Fi 6, Zigbee",
+        "Audio": "Stereo Speakers",
+        "Sensors": "Ambient Light, Motion"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Compact Mirrorless Camera",
+      "category": "PHOTOGRAPHY",
+      "rating": 5,
+      "reviews_count": 215,
+      "price": 1299.99,
+      "images": [
+        "./images/Compact Mirrorless Camera.avif",
+        "./images/Compact Mirrorless Camera.avif",
+        "./images/Compact Mirrorless Camera.avif"
+      ],
+      "description": "Pro-level photography in a travel-friendly size. Fast autofocus and incredible dynamic range.",
+      "specifications": {
+        "Sensor": "24.2MP APS-C",
+        "Mount": "E-Mount",
+        "Video": "4K 30fps",
+        "Weight": "450g",
+        "Stabilization": "In-body 5-axis",
+        "Battery": "NP-FZ100"
+      }
+    },
+    {
+      "id": 11,
+      "name": "Noise-Cancelling Earbuds",
+      "category": "AUDIO",
+      "rating": 4,
+      "reviews_count": 940,
+      "price": 179.99,
+      "images": [
+        "./images/Noise-Cancelling Earbuds.avif",
+        "./images/Noise-Cancelling Earbuds.avif",
+        "./images/Noise-Cancelling Earbuds.avif"
+      ],
+      "description": "Small size, big sound. Active noise cancellation that adapts to your environment for crystal clear listening.",
+      "specifications": {
+        "Drivers": "11mm Dynamic",
+        "Battery": "28 hours with case",
+        "Waterproof": "IPX4",
+        "Charging": "Wireless + USB-C",
+        "Weight": "5g per earbud",
+        "Bluetooth": "5.2"
+      }
+    },
+    {
+      "id": 12,
+      "name": "Gaming Mouse Wireless",
+      "category": "ACCESSORIES",
+      "rating": 5,
+      "reviews_count": 275,
+      "price": 89.99,
+      "images": [
+        "./images/Gaming Mouse Wireless.avif",
+        "./images/Gaming Mouse Wireless.avif",
+        "./images/Gaming Mouse Wireless.avif"
+      ],
+      "description": "Ultra-lightweight design with a zero-lag wireless connection. Optical sensors for pixel-perfect tracking.",
+      "specifications": {
+        "DPI": "25,000",
+        "Weight": "63g",
+        "Battery": "70 hours",
+        "Switches": "Optical Gen-3",
+        "Connection": "2.4GHz Lightspeed",
+        "Buttons": "6 Programmable"
+      }
+    },
+    {
+      "id": 13,
+      "name": "Streaming Condenser Microphone",
+      "category": "AUDIO",
+      "rating": 5,
+      "reviews_count": 642,
+      "price": 149.99,
+      "images": [
+        "./images/Streaming Condenser Microphone.jfif",
+        "./images/Streaming Condenser Microphone.jfif",
+        "./images/Streaming Condenser Microphone.jfif"
+      ],
+      "description": "Studio-quality sound for gaming, podcasting, and streaming. High-precision cardioid pickup pattern.",
+      "specifications": {
+        "Polar Pattern": "Cardioid",
+        "Sample Rate": "96kHz / 24-bit",
+        "Frequency Response": "20Hz - 20kHz",
+        "Connection": "USB-C Plug & Play",
+        "Features": "Tap-to-Mute, Gain Control",
+        "Mounting": "Built-in Shock Mount"
+      }
+    },
+    {
+      "id": 14,
+      "name": "VR Gaming Headset",
+      "category": "GAMING",
+      "rating": 4,
+      "reviews_count": 1240,
+      "price": 499.99,
+      "images": [
+        "./images/VR Gaming Headset.jfif",
+        "./images/VR Gaming Headset.jfif",
+        "./images/VR Gaming Headset.jfif"
+      ],
+      "description": "All-in-one VR gaming without wires. Experience total immersion with high-resolution displays and 3D audio.",
+      "specifications": {
+        "Resolution": "1832 x 1920 per eye",
+        "Refresh Rate": "120Hz",
+        "Storage": "256GB",
+        "Processor": "Snapdragon XR2",
+        "Tracking": "6DOF Inside-Out",
+        "Battery Life": "2-3 hours"
+      }
     }
   ]
 }
