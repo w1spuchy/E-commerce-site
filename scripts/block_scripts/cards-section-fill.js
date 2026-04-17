@@ -47,8 +47,6 @@ export async function fillCardSection(sectionId, sortOrder)
         pagesContent.push(pageProducts);
     }
 
-    console.log(pagesContent);
-
 
     filteredProducts.forEach(product => {
         const productCard = document.createElement('a');
@@ -75,6 +73,33 @@ export async function fillCardSection(sectionId, sortOrder)
         `;
         section.appendChild(productCard);
     });
+
+    const paginationSection = document.querySelector(".pagination-section");
+    paginationSection.innerHTML = "";
+
+    const paginationButtonsSection = document.createElement('div');
+    paginationButtonsSection.classList.add('pagination-buttons-section');
+
+    const prevPageButton = document.createElement('button');
+    prevPageButton.classList.add('pagination-button');
+    prevPageButton.innerHTML = `
+        <i class="fa-solid fa-arrow-left""></i>   
+    `
+    paginationButtonsSection.appendChild(prevPageButton);
+
+    for(let i = 0; i < pagesNumber; i++)
+    {
+
+    }
+
+    const nextPageButton = document.createElement('button');
+    nextPageButton.classList.add('pagination-button');
+    nextPageButton.innerHTML = `
+        <i class="fa-solid fa-arrow-right"></i>
+    `
+    paginationButtonsSection.appendChild(nextPageButton);
+
+    paginationSection.appendChild(paginationButtonsSection);
 
     if(filteredProducts.length == 0)
     {
