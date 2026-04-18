@@ -168,6 +168,7 @@ export async function fillCardSection(sectionId, sortOrder)
 
     function insertCards(products)
     {
+        section.innerHTML = '';
         products.forEach(product => {
             const productCard = document.createElement('a');
             productCard.classList.add('product-card');
