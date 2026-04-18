@@ -27,13 +27,14 @@ export async function fillCardSection(sectionId, sortOrder)
                 return
         }
     }
-    const section = document.getElementById(sectionId);
-    section.innerHTML = '';
     let filteredProducts = filter(cachedProducts.products);
     if(filteredProducts == null){
         filteredProducts = cachedProducts.products;
     }
 
+    const section = document.getElementById(sectionId);
+    section.innerHTML = '';
+    let currentPageIndex = 0;
     const pagesNumber = Math.ceil(filteredProducts.length / 6);
     const pagesContent = [];
     for(let i = 0; i < pagesNumber; i++)
@@ -47,59 +48,109 @@ export async function fillCardSection(sectionId, sortOrder)
         pagesContent.push(pageProducts);
     }
 
-
-    filteredProducts.forEach(product => {
-        const productCard = document.createElement('a');
-        productCard.classList.add('product-card');
-        productCard.innerHTML=`
-            <div class="product-card-container">
-                <div class="product-photo-container">
-                    <img src="${product.images[0]}" alt="${product.name}">
-                </div>
-                <div class="product-description-container">
-                    <div class="product-name">${product.name}</div>
-                    <div class="product-rating">
-                        <div class="star-rating">
-                            ${renderRating(product.rating)}
-                        </div>
-                        <div class="digital-rating">(${product.rating})</div>
-                    </div>
-                    <div class="product-price-section">
-                        <div class="product-price">$${product.price}</div>
-                        <div class="product-category">${product.category}</div>
-                    </div>
-                </div>
-            </div>
-        `;
-        section.appendChild(productCard);
-    });
-
+    if(pagesContent.length != 0)
+    {
+        insertCards(pagesContent[currentPageIndex]);
+    }
     const paginationSection = document.querySelector(".pagination-section");
     paginationSection.innerHTML = "";
 
-    const paginationButtonsSection = document.createElement('div');
-    paginationButtonsSection.classList.add('pagination-buttons-section');
-
-    const prevPageButton = document.createElement('button');
-    prevPageButton.classList.add('pagination-button');
-    prevPageButton.innerHTML = `
-        <i class="fa-solid fa-arrow-left""></i>   
-    `
-    paginationButtonsSection.appendChild(prevPageButton);
-
-    for(let i = 0; i < pagesNumber; i++)
+    if(pagesNumber > 1)
     {
+        paginationSection.style = 'display: flex';
 
+        const paginationButtonsSection = document.createElement('div');
+        paginationButtonsSection.classList.add('pagination-buttons-section');
+    
+        const prevPageButton = document.createElement('button');
+        prevPageButton.classList.add('pagination-button');
+        prevPageButton.innerHTML = `
+            <i class="fa-solid fa-arrow-left""></i>   
+        `
+        prevPageButton.disabled = true;
+        prevPageButton.style.cursor = 'not-allowed';
+        prevPageButton.addEventListener("click", e=> {
+            if(currentPageIndex != 0)
+            {
+                paginationButtonsSection.querySelector(`#pagination-button-${currentPageIndex}`).classList.toggle('selected');
+                currentPageIndex = currentPageIndex - 1;
+                paginationButtonsSection.querySelector(`#pagination-button-${currentPageIndex}`).classList.toggle('selected');
+                updateSwitchButtons();
+                window.scrollTo({top: 0, behavior: "smooth"});
+                insertCards(pagesContent[currentPageIndex]);   
+            }
+        });
+        paginationButtonsSection.appendChild(prevPageButton);
+    
+        for(let i = 0; i < pagesNumber; i++)
+        {
+            const paginationButton = document.createElement('button');
+            paginationButton.classList.add('pagination-button');
+            paginationButton.id = `pagination-button-${i}`
+            paginationButton.innerHTML = `
+                ${i+1}
+            `
+    
+            if(currentPageIndex === i)
+            {
+                paginationButton.classList.toggle('selected');
+            }
+    
+            paginationButton.addEventListener('click', e=>{
+                const buttonIndex = i;
+                if(currentPageIndex != buttonIndex)
+                {
+                    paginationButtonsSection.querySelector(`#pagination-button-${currentPageIndex}`).classList.toggle('selected');
+                    paginationButton.classList.toggle('selected');
+                    currentPageIndex = buttonIndex;
+    
+                    updateSwitchButtons();
+                    window.scrollTo({top: 0, behavior: "smooth"});
+                    insertCards(pagesContent[currentPageIndex]);
+                }
+            });
+    
+            paginationButtonsSection.appendChild(paginationButton);
+        }
+    
+    
+        const nextPageButton = document.createElement('button');
+        nextPageButton.classList.add('pagination-button');
+        nextPageButton.innerHTML = `
+            <i class="fa-solid fa-arrow-right"></i>
+        `
+        nextPageButton.addEventListener("click", e=> {
+            if(currentPageIndex != pagesNumber - 1)
+            {
+                paginationButtonsSection.querySelector(`#pagination-button-${currentPageIndex}`).classList.toggle('selected');
+                currentPageIndex = currentPageIndex + 1;
+                paginationButtonsSection.querySelector(`#pagination-button-${currentPageIndex}`).classList.toggle('selected');
+                updateSwitchButtons();
+                window.scrollTo({top: 0, behavior: "smooth"});
+                insertCards(pagesContent[currentPageIndex]);   
+            }
+        });
+    
+        paginationButtonsSection.appendChild(nextPageButton);
+    
+        paginationSection.appendChild(paginationButtonsSection);
+
+        function updateSwitchButtons()
+        {
+            let prevButEnable = currentPageIndex === 0;
+            prevPageButton.disabled = prevButEnable ? true : false;
+            prevPageButton.style.cursor = prevButEnable ? 'not-allowed' : 'pointer';
+
+            let nextButEnable = currentPageIndex === pagesNumber - 1;
+            nextPageButton.disabled = nextButEnable ? true : false;
+            nextPageButton.style.cursor = nextButEnable ? 'not-allowed' : 'pointer'; 
+        }
+    }
+    else
+    {
+        paginationSection.style = 'display: none';
     }
 
-    const nextPageButton = document.createElement('button');
-    nextPageButton.classList.add('pagination-button');
-    nextPageButton.innerHTML = `
-        <i class="fa-solid fa-arrow-right"></i>
-    `
-    paginationButtonsSection.appendChild(nextPageButton);
-
-    paginationSection.appendChild(paginationButtonsSection);
 
     if(filteredProducts.length == 0)
     {
@@ -113,6 +164,35 @@ export async function fillCardSection(sectionId, sortOrder)
         `;
 
         section.appendChild(emptyListMessage);
+    }
+
+    function insertCards(products)
+    {
+        products.forEach(product => {
+            const productCard = document.createElement('a');
+            productCard.classList.add('product-card');
+            productCard.innerHTML=`
+                <div class="product-card-container">
+                    <div class="product-photo-container">
+                        <img src="${product.images[0]}" alt="${product.name}">
+                    </div>
+                    <div class="product-description-container">
+                        <div class="product-name">${product.name}</div>
+                        <div class="product-rating">
+                            <div class="star-rating">
+                                ${renderRating(product.rating)}
+                            </div>
+                            <div class="digital-rating">(${product.rating})</div>
+                        </div>
+                        <div class="product-price-section">
+                            <div class="product-price">$${product.price}</div>
+                            <div class="product-category">${product.category}</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            section.appendChild(productCard);
+        });
     }
 }
 

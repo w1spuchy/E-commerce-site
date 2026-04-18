@@ -344,6 +344,7 @@ input[type="range"]::-moz-range-thumb{
     align-items: center;
     height: 40px;
     width: 100%;
+    margin-top: 32px;
 }
 
 .pagination-buttons-section
@@ -369,6 +370,17 @@ input[type="range"]::-moz-range-thumb{
     background-color: #e1e1e1;
 }
 
+.pagination-button.selected
+{
+    background-color: #3182ce;
+    color: white;
+    border: none;
+}
+
+.pagination-button.selected:hover
+{
+    background-color: #2d76bb;
+}
 
 @media (min-width: 1024px)
 {
