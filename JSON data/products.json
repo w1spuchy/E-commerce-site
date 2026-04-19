@@ -8,9 +8,9 @@
       "reviews_count": 245,
       "price": 129.99,
       "images": [
-        "./images/Portable Bluetooth Speaker.jfif",
-        "./images/Portable Bluetooth Speaker.jfif",
-        "./images/Portable Bluetooth Speaker.jfif"
+        "../images/Portable Bluetooth Speaker.jfif",
+        "../images/Portable Bluetooth Speaker.jfif",
+        "../images/Portable Bluetooth Speaker.jfif"
         
       ],
       "description": "Take your music anywhere with this powerful portable speaker. Delivers rich, immersive sound with deep bass. Waterproof design perfect for outdoor adventures and pool parties.",
@@ -31,9 +31,9 @@
       "reviews_count": 356,
       "price": 299.99,
       "images": [
-        "./images/Premium Wireless Headphones.jfif",
-        "./images/Premium Wireless Headphones.jfif",
-        "./images/Premium Wireless Headphones.jfif"
+        "../images/Premium Wireless Headphones.jfif",
+        "../images/Premium Wireless Headphones.jfif",
+        "../images/Premium Wireless Headphones.jfif"
       ],
       "description": "Experience immersive audio with our premium wireless headphones. Featuring advanced noise cancellation, 40-hour battery life, and studio-quality sound. Perfect for music enthusiasts and professionals who demand the best audio experience.",
       "specifications": {
@@ -53,9 +53,9 @@
       "reviews_count": 478,
       "price": 2499.99,
       "images": [
-        "./images/Professional DSLR Camera.jfif",
-        "./images/Professional DSLR Camera.jfif",
-        "./images/Professional DSLR Camera.jfif"
+        "../images/Professional DSLR Camera.jfif",
+        "../images/Professional DSLR Camera.jfif",
+        "../images/Professional DSLR Camera.jfif"
       ],
       "description": "Capture stunning images with this professional-grade DSLR camera. Features a full-frame sensor, 4K video recording, and exceptional low-light performance. Perfect for serious photographers and videographers.",
       "specifications": {
@@ -75,9 +75,9 @@
       "reviews_count": 193,
       "price": 1899.99,
       "images": [
-        "./images/Professional Laptop Pro.jfif",
-        "./images/Professional Laptop Pro.jfif",
-        "./images/Professional Laptop Pro.jfif"
+        "../images/Professional Laptop Pro.jfif",
+        "../images/Professional Laptop Pro.jfif",
+        "../images/Professional Laptop Pro.jfif"
       ],
       "description": "Powerful performance meets sleek design in this professional laptop. Equipped with the latest processor, stunning display, and all-day battery life. Ideal for creative professionals and power users.",
       "specifications": {
@@ -97,9 +97,9 @@
       "reviews_count": 667,
       "price": 449.99,
       "images": [
-        "./images/Smart Fitness Watch Ultra.jfif",
-        "./images/Smart Fitness Watch Ultra.jfif",
-        "./images/Smart Fitness Watch Ultra.jfif"
+        "../images/Smart Fitness Watch Ultra.jfif",
+        "../images/Smart Fitness Watch Ultra.jfif",
+        "../images/Smart Fitness Watch Ultra.jfif"
       ],
       "description": "Track your fitness goals with precision and style. Features advanced health monitoring, GPS tracking, and a vibrant always-on display. Water-resistant and built for active lifestyles.",
       "specifications": {
@@ -119,9 +119,9 @@
       "reviews_count": 336,
       "price": 799.99,
       "images": [
-        "./images/Ultra-Thin Tablet Pro.jfif",
-        "./images/Ultra-Thin Tablet Pro.jfif",
-        "./images/Ultra-Thin Tablet Pro.jfif"
+        "../images/Ultra-Thin Tablet Pro.jfif",
+        "../images/Ultra-Thin Tablet Pro.jfif",
+        "../images/Ultra-Thin Tablet Pro.jfif"
         
       ],
       "description": "Experience productivity and entertainment on a stunning display. This ultra-thin tablet features powerful performance, all-day battery, and support for stylus input. Perfect for work and play.",
@@ -142,9 +142,9 @@
       "reviews_count": 812,
       "price": 159.99,
       "images": [
-          "./images/Mechanical Gaming Keyboard.avif",
-          "./images/Mechanical Gaming Keyboard.avif",
-          "./images/Mechanical Gaming Keyboard.avif"
+          "../images/Mechanical Gaming Keyboard.avif",
+          "../images/Mechanical Gaming Keyboard.avif",
+          "../images/Mechanical Gaming Keyboard.avif"
       ],
       "description": "Ultra-responsive mechanical switches with customizable RGB lighting. Built for durability and speed in competitive gaming.",
       "specifications": {
@@ -164,9 +164,9 @@
       "reviews_count": 425,
       "price": 899.99,
       "images": [
-        "./images/4K Ultra-Wide Monitor.avif",
-        "./images/4K Ultra-Wide Monitor.avif",
-        "./images/4K Ultra-Wide Monitor.avif"
+        "../images/4K Ultra-Wide Monitor.avif",
+        "../images/4K Ultra-Wide Monitor.avif",
+        "../images/4K Ultra-Wide Monitor.avif"
       ],
       "description": "Expand your workspace with a curved 34-inch ultra-wide display. Incredible color accuracy for designers and gamers alike.",
       "specifications": {
@@ -186,9 +186,9 @@
       "reviews_count": 520,
       "price": 229.99,
       "images": [
-        "./images/Smart Home Hub Max.avif",
-        "./images/Smart Home Hub Max.avif",
-        "./images/Smart Home Hub Max.avif"
+        "../images/Smart Home Hub Max.avif",
+        "../images/Smart Home Hub Max.avif",
+        "../images/Smart Home Hub Max.avif"
       ],
       "description": "Control your entire home with a single touch or voice command. Integrated speaker and smart display for your security and entertainment.",
       "specifications": {
@@ -208,9 +208,9 @@
       "reviews_count": 215,
       "price": 1299.99,
       "images": [
-        "./images/Compact Mirrorless Camera.avif",
-        "./images/Compact Mirrorless Camera.avif",
-        "./images/Compact Mirrorless Camera.avif"
+        "../images/Compact Mirrorless Camera.avif",
+        "../images/Compact Mirrorless Camera.avif",
+        "../images/Compact Mirrorless Camera.avif"
       ],
       "description": "Pro-level photography in a travel-friendly size. Fast autofocus and incredible dynamic range.",
       "specifications": {
@@ -230,9 +230,9 @@
       "reviews_count": 940,
       "price": 179.99,
       "images": [
-        "./images/Noise-Cancelling Earbuds.avif",
-        "./images/Noise-Cancelling Earbuds.avif",
-        "./images/Noise-Cancelling Earbuds.avif"
+        "../images/Noise-Cancelling Earbuds.avif",
+        "../images/Noise-Cancelling Earbuds.avif",
+        "../images/Noise-Cancelling Earbuds.avif"
       ],
       "description": "Small size, big sound. Active noise cancellation that adapts to your environment for crystal clear listening.",
       "specifications": {
@@ -252,9 +252,9 @@
       "reviews_count": 275,
       "price": 89.99,
       "images": [
-        "./images/Gaming Mouse Wireless.avif",
-        "./images/Gaming Mouse Wireless.avif",
-        "./images/Gaming Mouse Wireless.avif"
+        "../images/Gaming Mouse Wireless.avif",
+        "../images/Gaming Mouse Wireless.avif",
+        "../images/Gaming Mouse Wireless.avif"
       ],
       "description": "Ultra-lightweight design with a zero-lag wireless connection. Optical sensors for pixel-perfect tracking.",
       "specifications": {
@@ -274,9 +274,9 @@
       "reviews_count": 642,
       "price": 149.99,
       "images": [
-        "./images/Streaming Condenser Microphone.jfif",
-        "./images/Streaming Condenser Microphone.jfif",
-        "./images/Streaming Condenser Microphone.jfif"
+        "../images/Streaming Condenser Microphone.jfif",
+        "../images/Streaming Condenser Microphone.jfif",
+        "../images/Streaming Condenser Microphone.jfif"
       ],
       "description": "Studio-quality sound for gaming, podcasting, and streaming. High-precision cardioid pickup pattern.",
       "specifications": {
@@ -296,9 +296,9 @@
       "reviews_count": 1240,
       "price": 499.99,
       "images": [
-        "./images/VR Gaming Headset.jfif",
-        "./images/VR Gaming Headset.jfif",
-        "./images/VR Gaming Headset.jfif"
+        "../images/VR Gaming Headset.jfif",
+        "../images/VR Gaming Headset.jfif",
+        "../images/VR Gaming Headset.jfif"
       ],
       "description": "All-in-one VR gaming without wires. Experience total immersion with high-resolution displays and 3D audio.",
       "specifications": {
