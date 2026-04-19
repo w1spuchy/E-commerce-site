@@ -1,0 +1,114 @@
+@import "./base/base_styles";
+@import "./element_styles/topology";
+@import "./element_styles/colors";
+@import "./blocks/header";
+@import "./blocks/footer";
+
+*
+{
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+#main-container
+{
+    box-sizing: border-box;
+    padding: 32px 16px;
+}
+
+h1
+{
+    @include title-text;
+    margin-bottom: 16px;
+}
+
+p
+{
+    color: $light-text-color;
+    margin: 0px 0px 32px;
+}
+
+#categories-container
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.category-card
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    border: 1px solid $light-shadow;
+    border-radius: 8px;
+    width: 100%;
+    overflow: hidden;
+    transition: ease 0.2s box-shadow;
+
+    img
+    {
+        width: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+        transition: 0.2s ease-in-out;
+    }
+
+    .card-blackout-layer
+    {
+        position: absolute;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        border-radius: 8px;
+        padding: 24px;
+        background: linear-gradient(to top, #00000055, transparent);
+    }
+
+    .category-info-section
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+    }
+
+    h3
+    {
+        @include title-text;
+        font-size: 20px;
+        margin: 0px 0px 4px;
+    }
+
+    .category-info-text
+    {
+        color: white;
+    }
+}
+
+.category-card:hover
+{
+    box-shadow: 0px 4px 6px $light-shadow;
+}
+
+.category-card:hover img
+{
+    transform: scale(1.05);
+}
+
+@media (min-width: 640px)
+{
+    .category-card
+    {
+        width: calc(50% - 14px);
+    }
+}
+
+@media (min-width: 1024px)
+{
+    .category-card
+    {
+        width: calc(33% - 16px);
+    }
+}
