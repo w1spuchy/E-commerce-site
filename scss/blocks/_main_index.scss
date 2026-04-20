@@ -163,14 +163,33 @@ main
     background-color: #d1cfcf9a;
 }
 
+#products-category-path
+{
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    margin: 0px 0px 12px;
+
+    a
+    {
+        font-size: 14px;
+        color: $light-text-color;
+        transition: 0.3s ease all;
+    }
+
+    a:hover
+    {
+        color: #3182ce;
+    }
+}
+
 #product-section
 {
     display: flex;
     justify-content: center;
     gap: 24px;
 }
-
-
 
 #filters-side-section
 {

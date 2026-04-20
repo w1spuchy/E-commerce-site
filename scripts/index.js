@@ -6,7 +6,9 @@ import { initCheckbox } from "./block_scripts/checkbox.js";
 import { initClearFiltersButtons } from "./block_scripts/filter.js";
 import { initProductSorting } from "./block_scripts/product_sort.js";
 import { initSearch } from "./block_scripts/search.js";
+import { initCategoryPath } from "./block_scripts/category-path.js";
 
+initCategoryPath();
 fillCardSection('all-products-section');
 initRangeSlider();
 initDropdownSelect();

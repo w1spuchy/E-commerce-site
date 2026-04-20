@@ -589,6 +589,22 @@ main {
   background-color: rgba(209, 207, 207, 0.6039215686);
 }
 
+#products-category-path {
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  margin: 0px 0px 12px;
+}
+#products-category-path a {
+  font-size: 14px;
+  color: #364153;
+  transition: 0.3s ease all;
+}
+#products-category-path a:hover {
+  color: #3182ce;
+}
+
 #product-section {
   display: flex;
   justify-content: center;
