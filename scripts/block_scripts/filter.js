@@ -19,7 +19,7 @@ export function filter(products)
         minRating = selectedRatings.reduce((min, curr)=>{
             return curr < min ? curr : min;
         });
-    }                 
+    }          
 
     const priceMinDiv = document.querySelector('.price-min-value'); 
     const priceMaxDiv = document.querySelector('.price-max-value'); 
