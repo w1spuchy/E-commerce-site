@@ -47,6 +47,10 @@ export function filter(products)
         }
         filteredProducts.push(product);
     });
+
+    const productCountElement = document.getElementById('product-count');
+    productCountElement.innerHTML = filteredProducts.length === 1 ? `${filteredProducts.length} product` : `${filteredProducts.length} products`;
+
     return filteredProducts;
 }
 
