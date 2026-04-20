@@ -24,6 +24,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
     width: 100%;
     height: 80%;
     aspect-ratio: 1/1;
@@ -37,6 +38,32 @@
     height: 100%;
     object-fit: cover;
     transition: 0.2s ease-in-out;
+}
+
+.product-photo-container:hover .cart-button
+{
+    display: flex;
+}
+
+.cart-button
+{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: #155dfc;
+    transition: 0.3s ease all;
+}
+
+.cart-button:hover
+{
+    background-color: #1250d4;
 }
 
 .product-description-container
@@ -53,6 +80,12 @@
 {
     @include title-text;
     font-size: 18px;
+    transition: 0.3s ease all;
+}
+
+.product-name:hover
+{
+    @include link-text-hover;
 }
 
 .product-rating

@@ -76,25 +76,26 @@ export async function initSearch()
         {
             searchResults.forEach(res => {
                 const productItem = document.createElement('li');
-                productItem.classList.add('search-res-item');
                 productItem.innerHTML = `
-                    <div class='search-res-item-photo-section'>
-                        <img src="${res.images[0]}" style="height: 48px; width: 48px;
-                                                        border-radius: 8px;">
-                    </div>
-                    <div class='search-res-item-info-section'>
-                        <div style="font-size: 16px; font-weight: 600;">
-                            ${res.name}
+                    <a href="../pages/product-page.html?id=${res.id}&category=${res.category}" class="search-res-item">
+                        <div class='search-res-item-photo-section'>
+                            <img src="${res.images[0]}" style="height: 48px; width: 48px;
+                                                            border-radius: 8px;">
                         </div>
-                        <div style="display: flex; flex-direction:row; justify-content: space-between;">
-                            <div style="font-weight: 600; color: #155dfc">
-                                $${res.price}
+                        <div class='search-res-item-info-section'>
+                            <div style="font-size: 16px; font-weight: 600;">
+                                ${res.name}
                             </div>
-                            <div style="color: #fdc700;">
-                                ${renderRating(res.rating)}
+                            <div style="display: flex; flex-direction:row; justify-content: space-between;">
+                                <div style="font-weight: 600; color: #155dfc">
+                                    $${res.price}
+                                </div>
+                                <div style="color: #fdc700;">
+                                    ${renderRating(res.rating)}
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 `
                 searchResultList.appendChild(productItem);
             })
