@@ -19,7 +19,10 @@ export function filter(products)
         minRating = selectedRatings.reduce((min, curr)=>{
             return curr < min ? curr : min;
         });
-    }          
+    }      
+    
+    const params = new URLSearchParams(window.location.search);
+    const categoryName = params.get('category');
 
     const priceMinDiv = document.querySelector('.price-min-value'); 
     const priceMaxDiv = document.querySelector('.price-max-value'); 
@@ -27,11 +30,22 @@ export function filter(products)
     const maxPrice = parseInt(priceMaxDiv.innerHTML.replace('$', ''));
 
     Array.from(products).forEach(product=> {
-        if(!(product.rating < minRating)) {
-            if(((product.price >= minPrice) && (product.price <= maxPrice))){
-                filteredProducts.push(product);
+        if((product.rating < minRating))
+        {
+            return;
+        }
+        if(!((product.price >= minPrice) && (product.price <= maxPrice)))
+        {
+            return;
+        }
+        if(categoryName)
+        {
+            if(categoryName != product.category)
+            {
+                return;
             }
         }
+        filteredProducts.push(product);
     });
     return filteredProducts;
 }
