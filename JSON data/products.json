@@ -7,6 +7,7 @@
       "rating": 3.5,
       "reviews_count": 245,
       "price": 129.99,
+      "discount": null,
       "images": [
         "../images/Portable Bluetooth Speaker.jfif",
         "../images/Portable Bluetooth Speaker.jfif",
@@ -30,6 +31,7 @@
       "rating": 4.5,
       "reviews_count": 356,
       "price": 299.99,
+      "discount": null,
       "images": [
         "../images/Premium Wireless Headphones.jfif",
         "../images/Premium Wireless Headphones.jfif",
@@ -52,6 +54,7 @@
       "rating": 5,
       "reviews_count": 478,
       "price": 2499.99,
+      "discount": 0.2,
       "images": [
         "../images/Professional DSLR Camera.jfif",
         "../images/Professional DSLR Camera.jfif",
@@ -74,6 +77,7 @@
       "rating": 4.5,
       "reviews_count": 193,
       "price": 1899.99,
+      "discount": null,
       "images": [
         "../images/Professional Laptop Pro.jfif",
         "../images/Professional Laptop Pro.jfif",
@@ -96,6 +100,7 @@
       "rating": 4.5,
       "reviews_count": 667,
       "price": 449.99,
+      "discount": null,
       "images": [
         "../images/Smart Fitness Watch Ultra.jfif",
         "../images/Smart Fitness Watch Ultra.jfif",
@@ -118,6 +123,7 @@
       "rating": 4.5,
       "reviews_count": 336,
       "price": 799.99,
+      "discount": null,
       "images": [
         "../images/Ultra-Thin Tablet Pro.jfif",
         "../images/Ultra-Thin Tablet Pro.jfif",
@@ -141,6 +147,7 @@
       "rating": 4.5,
       "reviews_count": 812,
       "price": 159.99,
+      "discount": null,
       "images": [
           "../images/Mechanical Gaming Keyboard.avif",
           "../images/Mechanical Gaming Keyboard.avif",
@@ -163,6 +170,7 @@
       "rating": 4.5,
       "reviews_count": 425,
       "price": 899.99,
+      "discount": 0.2,
       "images": [
         "../images/4K Ultra-Wide Monitor.avif",
         "../images/4K Ultra-Wide Monitor.avif",
@@ -185,6 +193,7 @@
       "rating": 4.5,
       "reviews_count": 520,
       "price": 229.99,
+      "discount": null,
       "images": [
         "../images/Smart Home Hub Max.avif",
         "../images/Smart Home Hub Max.avif",
@@ -207,6 +216,7 @@
       "rating": 5,
       "reviews_count": 215,
       "price": 1299.99,
+      "discount": null,
       "images": [
         "../images/Compact Mirrorless Camera.avif",
         "../images/Compact Mirrorless Camera.avif",
@@ -229,6 +239,7 @@
       "rating": 4,
       "reviews_count": 940,
       "price": 179.99,
+      "discount": null,
       "images": [
         "../images/Noise-Cancelling Earbuds.avif",
         "../images/Noise-Cancelling Earbuds.avif",
@@ -251,6 +262,7 @@
       "rating": 5,
       "reviews_count": 275,
       "price": 89.99,
+      "discount": null,
       "images": [
         "../images/Gaming Mouse Wireless.avif",
         "../images/Gaming Mouse Wireless.avif",
@@ -273,6 +285,7 @@
       "rating": 5,
       "reviews_count": 642,
       "price": 149.99,
+      "discount": null,
       "images": [
         "../images/Streaming Condenser Microphone.jfif",
         "../images/Streaming Condenser Microphone.jfif",
@@ -295,6 +308,7 @@
       "rating": 4,
       "reviews_count": 1240,
       "price": 499.99,
+      "discount": 0.3,
       "images": [
         "../images/VR Gaming Headset.jfif",
         "../images/VR Gaming Headset.jfif",
