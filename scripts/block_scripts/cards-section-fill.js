@@ -2,7 +2,7 @@ import { filter } from "./filter.js";
 
 let cachedProducts = null;
 
-export async function fillCardSection(sectionId, sortOrder, productsTofillIn)
+export async function fillCardSection(sectionId, sortOrder, filterFunc)
 {
     if (!cachedProducts) {
         const response = await fetch('../JSON data/products.json');
@@ -10,7 +10,7 @@ export async function fillCardSection(sectionId, sortOrder, productsTofillIn)
         cachedProducts = data;
     }
     
-    if(sortOrder != null)
+    if(sortOrder != undefined)
     {
         switch(sortOrder)
         {
@@ -27,7 +27,17 @@ export async function fillCardSection(sectionId, sortOrder, productsTofillIn)
                 return
         }
     }
-    let filteredProducts = filter(cachedProducts.products);
+
+    let filteredProducts;
+    if(filterFunc === undefined)
+    {
+        filteredProducts = filter(cachedProducts.products);
+    }
+    else
+    {
+        filteredProducts = filterFunc(cachedProducts.products)
+    }
+
     if(filteredProducts == null){
         filteredProducts = cachedProducts.products;
     }

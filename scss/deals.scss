@@ -1,5 +1,6 @@
 @import "./base/base_styles";
 @import "./blocks/header";
+@import "./element_styles/product_card";
 @import "./blocks/footer";
 @import "./element_styles/colors";
 
@@ -96,6 +97,52 @@ main
     flex-direction: row;
     flex-wrap: wrap;
     gap: 24px;
+}
+
+.pagination-section
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    height: 40px;
+    width: 100%;
+    margin-top: 32px;
+}
+
+.pagination-buttons-section
+{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.pagination-button
+{
+    @include rounded-button-base;
+    border: 1px solid $light-shadow;
+    background-color: transparent;
+    color: black;
+    transition: 0.4s ease all;
+    cursor: pointer;
+}
+
+.pagination-button:hover
+{
+    color: #3182ce;
+    background-color: #e1e1e1;
+}
+
+.pagination-button.selected
+{
+    background-color: #3182ce;
+    color: white;
+    border: none;
+}
+
+.pagination-button.selected:hover
+{
+    background-color: #2d76bb;
 }
 
 #browse-products-section
