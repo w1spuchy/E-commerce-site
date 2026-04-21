@@ -2,7 +2,7 @@ import { filter } from "./filter.js";
 
 let cachedProducts = null;
 
-export async function fillCardSection(sectionId, sortOrder)
+export async function fillCardSection(sectionId, sortOrder, productsTofillIn)
 {
     if (!cachedProducts) {
         const response = await fetch('../JSON data/products.json');

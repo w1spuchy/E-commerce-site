@@ -1,0 +1,134 @@
+@import "./base/base_styles";
+@import "./blocks/header";
+@import "./blocks/footer";
+@import "./element_styles/colors";
+
+main
+{
+    background-color: #f8f8f8;
+}
+
+#main-container
+{
+    display: flex;
+    flex-direction: column;
+    padding: 32px 16px;
+    gap: 32px;
+}
+
+#deals-title-section
+{
+    display: flex;
+    flex-direction: column;   
+    
+    #deals-title
+    {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        margin: 0px 0px 8px;
+    
+        h1
+        {
+            margin: 0px;
+            font-size: 24px;
+            font-weight: 500;
+        }
+    
+    }
+
+    p
+    {
+        color: $light-text-color;
+        margin: 0px;
+    }
+}
+
+#event-notification
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(to right, #2563eb, #9333ea);
+
+    #notification-title
+    {
+        color: white;
+        h2
+        {
+            font-size: 20px;
+            font-weight: 500;
+            margin: 0px 0px 8px;
+        }
+        p
+        {
+            font-size: 16px;
+            font-weight: 100;
+            color: #dbeafe;
+            margin: 0px;
+        }
+    }
+
+    #event-end-timer
+    {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 24px;
+        color: white;
+        height: 62px;
+        box-sizing: border-box;
+        border: none;
+        border-radius: 8px;
+        background: color-mix(in oklab, #fff 20%, transparent);
+    }
+}
+
+#deals-cards-section
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+#browse-products-section
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+    p
+    {
+        margin: 0px;
+        color: $light-text-color;
+    }
+
+    a
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #135dff;
+        border-radius: 8px;
+        padding: 8px 32px;
+        box-sizing: border-box;
+        height: 48px;
+        color: white;
+        font-weight: 600;
+        transition: 0.3s ease background-color;
+    }
+
+    a:hover
+    {
+        background-color: #1255e4;
+    }
+}
+
