@@ -3,6 +3,7 @@
 
 .product-card
 {
+    position: relative;
     border-radius: 8px;
     border: 1px solid $light-shadow;
     min-height: 250px;
@@ -132,7 +133,7 @@
 {
     font-weight: bold;
     font-size: 18px;
-    color: red;
+    color: #e7000b;
 }
 
 .old-price
@@ -146,6 +147,24 @@
 {
     @include small-text;
     font-size: 12px;
+}
+
+.price-discount-label
+{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 84px;
+    height: 24px;
+    background-color: #e7000b;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+    top: -8px;
+    right: -8px;
 }
 
 .product-card:hover

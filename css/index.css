@@ -71,6 +71,7 @@ a {
   }
 }
 .product-card {
+  position: relative;
   border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.1019607843);
   min-height: 250px;
@@ -189,7 +190,7 @@ a {
 .discount-price {
   font-weight: bold;
   font-size: 18px;
-  color: red;
+  color: #e7000b;
 }
 
 .old-price {
@@ -203,6 +204,23 @@ a {
   font-size: 0.875rem;
   color: #364153;
   font-size: 12px;
+}
+
+.price-discount-label {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 84px;
+  height: 24px;
+  background-color: #e7000b;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  position: absolute;
+  top: -8px;
+  right: -8px;
 }
 
 .product-card:hover {
