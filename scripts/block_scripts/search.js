@@ -67,6 +67,7 @@ export async function initSearch()
         searchInput.value = "";
         searchResultSection.style.display = 'none'
         searchBar.classList.toggle('show');
+        searchInput.focus();
     })
     searchInput.addEventListener("input",()=>{
         searchResultSection.style.display = 'flex';
