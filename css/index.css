@@ -179,6 +179,25 @@ a {
   color: #155dfc;
 }
 
+.price-discount-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.discount-price {
+  font-weight: bold;
+  font-size: 18px;
+  color: red;
+}
+
+.old-price {
+  font-size: 12px;
+  text-decoration: line-through;
+  color: #364153;
+}
+
 .product-category {
   margin: 0;
   font-size: 0.875rem;
@@ -210,6 +229,9 @@ a {
   .product-description-container {
     height: 45%;
   }
+  .old-price {
+    display: none;
+  }
 }
 @media (min-width: 1280px) {
   .product-card {
@@ -220,6 +242,9 @@ a {
   }
   .product-description-container {
     height: 20%;
+  }
+  .old-price {
+    display: flex;
   }
 }
 header {

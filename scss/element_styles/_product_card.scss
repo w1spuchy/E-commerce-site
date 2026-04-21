@@ -120,6 +120,28 @@
     color:#155dfc;
 }
 
+.price-discount-container
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+}
+
+.discount-price
+{
+    font-weight: bold;
+    font-size: 18px;
+    color: red;
+}
+
+.old-price
+{
+    font-size: 12px;
+    text-decoration:line-through;
+    color: $light-text-color;
+}
+
 .product-category
 {
     @include small-text;
@@ -155,6 +177,10 @@
     {
         height: 45%;
     }
+    .old-price
+    {
+        display: none;
+    }
 }
 
 @media (min-width: 1280px)
@@ -170,5 +196,9 @@
     .product-description-container
     {
         height: 20%;
+    }
+        .old-price
+    {
+        display: flex;
     }
 }

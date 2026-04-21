@@ -18,10 +18,10 @@ export async function fillCardSection(sectionId, sortOrder)
                 cachedProducts.products.sort((a,b) => a.name.localeCompare(b.name));
                 break;
             case 'sort-by-price':
-                cachedProducts.products.sort((a,b) => a.price - b. price);
+                cachedProducts.products.sort((a,b) => (a.price * (1 - (a.discount ? a.discount : 0))) - (b.price * (1 - (b.discount ? b.discount : 0))));
                 break;
             case 'sort-by-price-rev':
-                cachedProducts.products.sort((a,b) => b.price - a. price);
+                cachedProducts.products.sort((a,b) => (b.price * (1 - (b.discount ? b.discount : 0))) - (a.price * (1 - (a.discount ? a.discount : 0))));
                 break;
             default:
                 return
@@ -200,6 +200,29 @@ export async function fillCardSection(sectionId, sortOrder)
                 e.preventDefault();
 
             })
+
+            const cardPriceSection = productCard.querySelector(".product-price-section");
+            if(product.discount === null)
+            {
+                cardPriceSection.innerHTML = 
+                `
+                    <div class="product-price">$${product.price}</div>
+                    <div class="product-category">${product.category}</div>
+                `
+            }
+            else
+            {
+                cardPriceSection.innerHTML = 
+                `
+                    <div class="price-discount-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-percent-icon lucide-badge-percent"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m15 9-6 6"/><path d="M9 9h.01"/><path d="M15 15h.01"/></svg>
+                        <div class="discount-price">$${(product.price * (1-product.discount)).toFixed(2)}</div>
+                        <div class="old-price">$${product.price}</div>
+                    </div>
+                    <div class="product-category">${product.category}</div>
+                `
+            }
+
 
             section.appendChild(productCard);
         });

@@ -54,7 +54,7 @@
       "rating": 5,
       "reviews_count": 478,
       "price": 2499.99,
-      "discount": 0.2,
+      "discount": null,
       "images": [
         "../images/Professional DSLR Camera.jfif",
         "../images/Professional DSLR Camera.jfif",
@@ -100,7 +100,7 @@
       "rating": 4.5,
       "reviews_count": 667,
       "price": 449.99,
-      "discount": null,
+      "discount": 0.2,
       "images": [
         "../images/Smart Fitness Watch Ultra.jfif",
         "../images/Smart Fitness Watch Ultra.jfif",
