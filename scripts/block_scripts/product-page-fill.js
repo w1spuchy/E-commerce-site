@@ -1,4 +1,5 @@
 import { fillCardSection } from "./cards-section-fill.js";
+import { renderRating } from "./cards-section-fill.js";
 
 export async function fillProductInformation()
 {
@@ -59,11 +60,13 @@ export async function fillProductInformation()
         })
     })
 
-    const reletiveProductsContainer = document.getElementById('relative-products-container');
+    fillDescriptionSection();
+
+    const reletiveProductsSection = document.getElementById('relative-products-section');
     if(getProductsFromCategory(data.products).length != 0)
     {
         fillCardSection("relative-products-container", undefined, getProductsFromCategory);
-        reletiveProductsContainer.style.display = "flex";
+        reletiveProductsSection.style.display = "flex";
     }
 
     function changeMainImage(changeMethod)
@@ -90,4 +93,44 @@ export async function fillProductInformation()
         })
         return res;
     }
+
+    function fillDescriptionSection()
+    {
+        const productDescriptionContainer = document.getElementById("product-description-container");
+        productDescriptionContainer.innerHTML = 
+        `
+            <h1 id="product-name-label">${product.name}</h1>
+            <div id="product-rating-container">${renderRating(product.rating)}</div>
+            <div id="products-reviews-count">Based on ${product.reviews_count} reviews</div>
+            <div id="product-price-container">
+            </div>
+            <div id="key-highlights-section">
+                <h3>Key Highlights</h3>
+                <ul id="highlights-list">
+                </ul>
+            </div>
+            <div id="product-description-section">
+                <h2>Description</h2>
+                <p id="description-text">${product.description}</p>
+            </div>
+            <div id="quantity-section">
+                <span>Quantity</span>
+                <div id="quantity-buttons-section">
+                    <button id="decrement" class="quantity-button">-</button>
+                    <span id="quantity-count">1</span>
+                    <button id="increment" class="quantity-button">+</button>
+                </div>
+            </div>
+            <button id="add-to-cart-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+                <span>Add to cart</span>
+            </button>
+            <div id="technical-specifications-section">
+                <input id="show-trigger" type="checkbox" style="display: none">
+                <label for="show-trigger">Technical Specifications</label>
+                <ul id="technical-specifications-list"></ul>
+            </div>
+        `
+    }
 }
+

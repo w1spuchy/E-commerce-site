@@ -4,6 +4,11 @@
 @import "./element_styles/product_card";
 @import "./element_styles/colors";
 
+*
+{
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
 main
 {
     background-color: #F9FAFB;
@@ -143,17 +148,34 @@ main
 
 #product-description-container
 {
+    display: flex;
+    flex-direction: column;
     width: 100%;
 }
 
-#relative-products-container
+#relative-products-section
 {
     display: none;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 24px;
+    flex-direction: column;
     margin: 64px 0px 0px;
+
+    h1
+    {
+        font-size: 20px;
+        font-weight: 500;
+        margin: 0px 0px 24px;
+    }
+    
+    #relative-products-container
+    {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 24px;
+    }
 }
+
+
 
 .pagination-section
 {
