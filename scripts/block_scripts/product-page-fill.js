@@ -131,6 +131,46 @@ export async function fillProductInformation()
                 <ul id="technical-specifications-list"></ul>
             </div>
         `
+
+        const productSpecifications = product.specifications;
+        
+        const highlightsList = document.getElementById('highlights-list');
+        let highlightsCount = 0;
+        for(let key in productSpecifications)
+        {
+            if(productSpecifications.hasOwnProperty(key))
+            {   
+                const highlightItem = document.createElement('li');
+                highlightItem.classList.add('highlight-item');
+                highlightItem.innerHTML = 
+                `
+                    ${key}:${productSpecifications[key]}
+                `
+                highlightsList.appendChild(highlightItem);
+
+                highlightsCount++;
+                if(highlightsCount === 3)
+                {
+                    break;
+                }
+            }   
+        }
+
+        const specificationList = document.getElementById('technical-specifications-list');
+        for(let key in productSpecifications)
+        {
+            if(productSpecifications.hasOwnProperty(key))
+            {   
+                const specificationItem = document.createElement('li');
+                specificationItem.classList.add('specification-item');
+                specificationItem.innerHTML = 
+                `
+                    ${key}:${productSpecifications[key]}
+                `
+                specificationList.appendChild(specificationItem);
+            }   
+        }
+
     }
 }
 
