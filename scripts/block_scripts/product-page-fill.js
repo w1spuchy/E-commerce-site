@@ -122,7 +122,7 @@ export async function fillProductInformation()
                 <span>Quantity</span>
                 <div id="quantity-buttons-section">
                     <button id="decrement" class="quantity-button">-</button>
-                    <span id="quantity-count">1</span>
+                    <span id="quantity-count"></span>
                     <button id="increment" class="quantity-button">+</button>
                 </div>
             </div>
@@ -142,6 +142,25 @@ export async function fillProductInformation()
 
         const productSpecifications = product.specifications;
         
+        const productPriceContainer = document.getElementById('product-price-container');
+        if(product.discount === null)
+        {
+            productPriceContainer.innerHTML = 
+            `
+                <div id="product-price">$${product.price}</div>
+                <span>Free shipping</span>
+            `
+        }
+        else
+        {
+            productPriceContainer.innerHTML = 
+            `
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e7000b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-percent-icon lucide-badge-percent"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m15 9-6 6"/><path d="M9 9h.01"/><path d="M15 15h.01"/></svg>
+                <div id="discount-price">$${(product.price * (1 - product.discount)).toFixed(2)}</div>
+                <div id="old-price">$${product.price}</div>
+            `
+        }
+
         const highlightsList = document.getElementById('highlights-list');
         let highlightsCount = 0;
         for(let key in productSpecifications)
@@ -164,24 +183,33 @@ export async function fillProductInformation()
             }   
         }
 
-        const productPriceContainer = document.getElementById('product-price-container');
-        if(product.discount === null)
-        {
-            productPriceContainer.innerHTML = 
-            `
-                <div id="product-price">$${product.price}</div>
-                <span>Free shipping</span>
-            `
-        }
-        else
-        {
-            productPriceContainer.innerHTML = 
-            `
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e7000b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-percent-icon lucide-badge-percent"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m15 9-6 6"/><path d="M9 9h.01"/><path d="M15 15h.01"/></svg>
-                <div id="discount-price">$${(product.price * (1 - product.discount)).toFixed(2)}</div>
-                <div id="old-price">$${product.price}</div>
-            `
-        }
+        let currentQuantityCount = 1;
+        const quantityButtonsSection = document.getElementById("quantity-buttons-section");
+        const quantityCounter = quantityButtonsSection.querySelector("#quantity-count");
+        quantityCounter.innerHTML = currentQuantityCount;
+        const quantityButtons = quantityButtonsSection.querySelectorAll('.quantity-button');
+        quantityButtons.forEach(button=>{
+            if(button.id === "increment")
+            {
+                button.addEventListener('click', e=>
+                {  
+                    currentQuantityCount += 1;
+                    quantityCounter.innerHTML = currentQuantityCount;
+                });
+            }
+            else if(button.id === "decrement")
+            {
+                button.addEventListener('click', e=>
+                {   
+                    if(currentQuantityCount > 1)
+                    {
+                        currentQuantityCount -= 1;
+                        quantityCounter.innerHTML = currentQuantityCount;
+                    }
+                });
+            }
+        })
+        
 
         const specificationList = document.getElementById('technical-specifications-list');
         for(let key in productSpecifications)

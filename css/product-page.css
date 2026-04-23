@@ -870,6 +870,11 @@ main {
   gap: 12px;
 }
 #product-description-container #quantity-section #quantity-buttons-section #quantity-count {
+  display: flex;
+  flex-direction: column;
+  width: 50px;
+  align-items: center;
+  justify-content: center;
   margin: 0px;
 }
 #product-description-container #quantity-section #quantity-buttons-section .quantity-button {
