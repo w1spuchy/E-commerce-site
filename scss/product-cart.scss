@@ -1,0 +1,326 @@
+@import "./blocks/header";
+@import "./base/base_styles";
+@import "./blocks/footer";
+@import "./element_styles/colors";
+@import "./element_styles/cart_card";
+
+*
+{
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+main
+{
+    background-color: #F9FAFB;
+}
+
+#main-container
+{
+    min-height: 100vh;
+    padding: 32px 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+#cart-empty-message
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1
+    {
+        font-size: 24px;
+        font-weight: 500;
+        margin: 0px 0px 16px;
+    }
+
+    p
+    {
+        font-size: 16px;
+        color: $light-text-color;
+        margin: 0px 0px 32px;
+    }
+
+    a
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 8px 32px;
+        border: none;
+        border-radius: 8px;
+        background-color: #155dfb;
+        font-size: 16px;
+        font-weight: 600;
+        color: white;
+        transition: 0.3s ease all;
+    }
+
+    a:hover
+    {
+        background-color:#114ed2;        
+    }
+}
+
+h1
+{
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0px 0px 32px;
+}
+
+#order-section
+{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    flex-grow: 1;
+}
+
+#orders-container
+{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+#order-information-section
+{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: sticky;
+    top: 85px;  
+
+    h2
+    {
+        font-size: 20px;
+        font-weight: 500;
+        margin: 0px 0px 16px;
+    }
+
+    #order-summary
+    {
+        display: flex;
+        flex-direction: column;
+        padding: 24px;
+        margin: 0px 0px 16px;
+        background-color: white;
+        border: 1px solid $light-shadow;
+        border-radius: 8px;
+        
+        #order-price-section
+        {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin: 0px 0px 24px;
+            .price-container
+            {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin: 0px 0px 12px;
+                font-size: 14px;
+                color: black;
+                
+                .price-title
+                {
+                    color: $light-text-color;
+                }
+    
+            }
+            
+            .total-price-container
+            {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 12px 0px 0px;
+                border-top: 1px solid $light-shadow;
+                #total-price-title
+                {
+                    font-size: 16px;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        #promo-code-section
+        {
+            display: flex;
+            flex-direction: column;
+            margin: 0px 0px 24px;
+
+            span
+            {
+                font-size: 12px;
+                font-weight: 600;
+                margin: 0px 0px 8px;
+            }
+
+            #promo-input-container
+            {
+                display: flex;
+                flex-direction: row;
+                gap: 8px;
+                width: 100%;
+
+                input
+                {
+                    width: 100%;
+                    padding: 8px 16px;
+                    border: 1px solid $light-shadow;
+                    border-radius: 8px;  
+                }
+                input:focus
+                {
+                    outline: none;
+                }
+
+                button
+                {
+                    padding: 8px 16px 10px;
+                    color: white;
+                    font-size: 14px;
+                    font-weight: 600;
+                    background-color: #1e2939;
+                    border: none;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    transition: 0.3s ease background-color;
+                }
+
+                button:hover
+                {
+                    background-color: #161d29;
+                }
+            }
+
+            p
+            {
+                font-size: 12px;
+                color: $light-text-color;
+                margin: 8px 0px 0px;
+            }
+        }
+
+        #proceed-order-section
+        {
+            button
+            {
+                width: 100%;
+                padding: 16px 32px;
+                border: none;
+                border-radius: 8px;
+                background-color: #155dfb;
+                color: white;
+                font-size: 16px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: 0.3s ease background-color;
+            }
+
+            button:hover
+            {
+                background-color: #114ed2;
+            }
+        }
+    }
+
+    #shipping-information
+    {
+        display: flex;
+        flex-direction: column;
+        padding: 24px;
+        background-color: white;
+        border: 1px solid $light-shadow;
+        border-radius: 8px;
+
+        h3
+        {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 8px;
+            margin: 0px 0px 16px; 
+
+            span
+            {
+                font-size: 18px;
+                font-weight: 600;
+            }
+        }
+
+        #address-section
+        {
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+            margin: 0px 0px 12px;
+
+            #address-info
+            {
+                display: flex;
+                flex-direction: column;
+
+                p
+                {
+                    font-size: 14px;
+                    color: $light-text-color;
+                    margin: 0px;
+                }
+
+                #address-title
+                {
+                    font-weight: 600;
+                    color: black;
+                }
+            }
+        }
+
+        #delivery-info-section
+        {
+            display: flex;
+            flex-direction: column;
+            padding: 12px 0px 0px;
+            border-top: 1px solid $light-shadow;
+
+            p
+            {
+                font-size: 14px;
+                color: $light-text-color;
+                margin: 0px;
+            }
+
+            #delivery-title
+            {
+                color: black;
+                font-weight: 600;
+            }
+
+            #free-shipping-title
+            {
+                margin: 4px 0px 0px;
+                color: #00a63b;
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px)
+{
+    #order-section
+    {
+        flex-direction: row;
+    }   
+    #orders-container
+    {
+        width: calc(66% - 15px);
+    }
+    #order-information-section
+    {
+        width: calc(33% - 15px);
+    }
+}

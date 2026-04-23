@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore</title>
+    <link rel="stylesheet" href="../css/product-cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="module" src="../scripts/product-cart.js"></script>
+</head>
+<body>
+    <header>
+        <div id="desktop-header">
+            <a id="logo-container" href="./index.html">
+                <div id="logo-background">
+                    <div id="logo-text" style="font-weight: bold; color: white; font-size: 20px;">
+                        T
+                    </div>
+                </div>
+                <div id="logo-name" style="font-weight: bold; font-size: 20px;">
+                    TechStore
+                </div>
+            </a>
+            <nav id="header-nav">
+                <ul class="header-list">
+                    <li class="menu-item">
+                        <a href="./index.html">Products</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="./categories.html">Categories</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="./deals.html">Deals</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="./about.html">About</a>
+                    </li>
+                </ul>
+            </nav>
+            <div id="header-actions-bar">
+                <div id="header-search">
+                    <label id="header-search-button" class="rounded-button">
+                        <img src="../icons/Search.ico" alt="Search">
+                    </label>
+                </div>
+                <a href="./product-cart.html" id="header-cart-button" class="rounded-button">
+                    <img src="../icons/Cart.ico" alt="Cart">
+                    <div id="cart-product-counter"></div>
+                </a>
+                <label for="menu-checkbox" id="burger-menu-button" class="rounded-button">
+                    <img src="../icons/Menu.ico" alt="Menu">
+                </label>
+            </div>
+        </div>
+        <input type="checkbox" id="menu-checkbox" style="display: none;">
+        <nav id="header-nav-mobile">
+            <ul class="header-list">
+                <li class="menu-item">
+                    <a href="./index.html">Products</a>
+                </li>
+                <li class="menu-item">
+                    <a href="./categories.html">Categories</a>
+                </li>
+                <li class="menu-item">
+                    <a href="./deals.html">Deals</a>
+                </li>
+                <li class="menu-item">
+                    <a href="./about.html">About</a>
+                </li>
+            </ul>
+        </nav>
+        <div id="header-search-section">
+            <div id="header-search-bar">
+                <div id="search-input-section" class="search-wrapper">
+                    <div class="rounded-button">
+                        <img src="../icons/Search.ico" alt="Search">
+                    </div>
+                    <input type="text" id="header-search-input" autocomplete="off" placeholder="Search">
+                </div>
+                <div id="search-result-section" class="search-wrapper">
+                    <ul id="search-result-list">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="main-container">
+            <h1>Shopping Cart</h1>
+
+            <section id="order-section">
+                <div id="orders-container">
+
+                </div>
+                <aside id="order-information-section">
+                    <div id="order-summary">
+                        <h2>Order Summary</h2>
+                        <div id="order-price-section">
+                            <div class="price-container">
+                                <span class="price-title">Subtotal</span>
+                                <span></span>
+                            </div>
+                            <div class="price-container">
+                                <span class="price-title">Tax (8%)</span>
+                                <span></span>
+                            </div>
+                            <div class="total-price-container">
+                                <span id="total-price-title">Total</span>
+                                <span class="price-value"></span>
+                            </div>
+                        </div>
+                        <div id="promo-code-section">
+                            <span>Promo Code</span>
+                            <div id="promo-input-container">
+                                <input type="text" id="promo-input" placeholder="Enter code">
+                                <button id="apply-promo-button">Apply</button>
+                            </div>
+                            <p>Try code "SAVE10" for 10% off</p>
+                        </div>
+                        <div id="proceed-order-section">
+                            <button id="proceed-order-button">Proceed to Checkout</button>
+                        </div>
+                    </div>
+                    <div id="shipping-information">
+                        <h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#155dfb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-truck-icon lucide-truck"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+                            <span>Shipping Information</span>
+                        </h3>
+                        <div id="address-section">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="grey" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin-icon lucide-map-pin"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+                            <div id="address-info">
+                                <p id="address-title">Delivery Address</p>
+                                <p>123 Tech Street</p>
+                                <p>San Francisco, CA 94105</p>
+                            </div>
+                        </div>
+                        <div id="delivery-info-section">
+                            <p id="delivery-title">Estimated Delivery</p>
+                            <p>3-5 business days</p>
+                            <p id="free-shipping-title">Free shipping on orders over $50</p>
+                        </div>
+                    </div>
+                </aside>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="upper-footer">
+            <div class="footer-social-media-container footer-block">
+                <div class="footer-logo-container">
+                    <div class="logo-background">
+                        <div class="logo-text" style="font-weight: bold; color: white; font-size: 20px;">
+                            T
+                        </div>
+                    </div>
+                    <div class="logo-name" style="font-weight: bold; font-size: 20px;">
+                        TechStore
+                    </div>
+                </div>
+                <p class="footer-text">Your trusted destination for premium electronics and tech accessories. Quality products, competitive prices, exceptional service.</p>
+                <div class="footer-media-links-container">
+                    <a href="">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-quick-links-container footer-block">
+                <p class="footer-title-text">Quick Links</p>
+                <ul class="footer-links-list">
+                    <li class="footer-text">
+                        <a href="./index.html">Shop All Products</a>
+                    </li>
+                    <li class="footer-text">
+                        <a href="./deals.html">Special Deals</a>
+                    </li>
+                    <li class="footer-text">
+                        <a href="./about.html">About Us</a>
+                    </li>
+                    <li class="footer-text">
+                        <a href="">Contact Support</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-customer-service-container footer-block">
+                <p class="footer-title-text">Customer Service</p>
+                <ul class="footer-links-list">
+                    <li class="footer-text">
+                        <a href="">Shipping Information</a>
+                    </li>
+                    <li class="footer-text">
+                        <a href="">Returns & Exchanges</a>
+                    </li>
+                    <li class="footer-text"> 
+                        <a href="">FAQ</a>
+                    </li>
+                    <li class="footer-text">
+                        <a href="">Track Order</a>
+                    </li>
+                </ul>
+                <div class="support-info-block">
+                    <p class="footer-text">Customer Support:</p>
+                    <p class="footer-text" style="font-weight: 600;">1-800-TECH-SHOP</p>
+                    <p class="footer-text">support@techstore.com</p>
+                </div>
+            </div>
+            <div class="footer-newsletter-container footer-block">
+                <p class="footer-title-text">Newsletter</p>
+                <p class="footer-text">Subscribe to get special offers, free giveaways, and updates.</p>
+                <div class="input-email-section">
+                    <input type="text" placeholder="Enter your email" id="footer-email-input">
+                    <button id="footer-newsletter-button">Subscribe</button>
+                </div>
+            </div>
+        </div>
+        <div class="lower-footer">
+            <p class="footer-text">© 2026 TechStore. All rights reserved.</p>
+            <div class="footer-list-container">
+                <ul>
+                    <li class="footer-text">
+                        <a href="">Privacy Policy</a>
+                    </li>
+                    <li class="footer-text">
+                        <a href="">Terms of Service</a>
+                    </li>
+                    <li class="footer-text">
+                        <a href="">Cookie Policy</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
