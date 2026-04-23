@@ -757,6 +757,221 @@ main {
   flex-direction: column;
   width: 100%;
 }
+#product-description-container #product-name-label {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0px 0px 12px;
+}
+#product-description-container #product-rating-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  margin: 0px 0px 8px;
+}
+#product-description-container #product-rating-container #product-star-rating {
+  color: #fbc618;
+}
+#product-description-container #product-rating-container #product-digital-rating {
+  font-size: 14px;
+  color: #364153;
+}
+#product-description-container #product-reviews-count {
+  display: flex;
+  font-size: 14px;
+  color: #364153;
+  margin: 0px 0px 24px;
+}
+#product-description-container #product-price-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  margin: 0px 0px 24px;
+}
+#product-description-container #product-price-container #product-price {
+  font-size: 30px;
+  font-weight: bold;
+  color: #155dfc;
+}
+#product-description-container #product-price-container #discount-price {
+  font-size: 30px;
+  font-weight: bold;
+  color: #e7000b;
+}
+#product-description-container #product-price-container #old-price {
+  text-decoration: line-through;
+  padding: 12px 0px 0px;
+  font-size: 14px;
+  color: #364153;
+}
+#product-description-container #product-price-container span {
+  padding: 12px 0px 0px;
+  font-size: 14px;
+  color: #364153;
+}
+#product-description-container #key-highlights-section {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #eff6ff;
+  margin: 0px 0px 24px;
+}
+#product-description-container #key-highlights-section h3 {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0px 0px 8px;
+}
+#product-description-container #key-highlights-section #highlights-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 0px 0px 16px;
+  list-style-type: disc;
+}
+#product-description-container #key-highlights-section #highlights-list .highlight-item {
+  font-size: 14px;
+  margin: 0px 0px 4px;
+}
+#product-description-container #key-highlights-section #highlights-list .highlight-item::marker {
+  color: #155dfc;
+}
+#product-description-container #product-description-section {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 0px 24px;
+}
+#product-description-container #product-description-section h2 {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0px 0px 12px;
+}
+#product-description-container #product-description-section p {
+  font-size: 16px;
+  color: #364153;
+  text-align: justify;
+  margin: 0px;
+}
+#product-description-container #quantity-section {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 0px 24px;
+}
+#product-description-container #quantity-section span {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0px 0px 8px;
+}
+#product-description-container #quantity-section #quantity-buttons-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+#product-description-container #quantity-section #quantity-buttons-section #quantity-count {
+  margin: 0px;
+}
+#product-description-container #quantity-section #quantity-buttons-section .quantity-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1019607843);
+  padding: 0px 0px 4px;
+  background-color: transparent;
+  transition: 0.3s ease all;
+  cursor: pointer;
+}
+#product-description-container #quantity-section #quantity-buttons-section .quantity-button:hover {
+  background-color: #d6d6d6;
+}
+#product-description-container #add-to-cart-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0px 0px 24px;
+  padding: 8px 32px;
+  border: none;
+  border-radius: 8px;
+  background-color: #155dfc;
+  color: white;
+  transition: 0.3s ease all;
+  cursor: pointer;
+}
+#product-description-container #add-to-cart-button span {
+  padding: 8px 0px;
+  font-size: 16px;
+  font-weight: 600;
+}
+#product-description-container #add-to-cart-button:hover {
+  background-color: #114dcf;
+}
+#product-description-container #technical-specifications-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 16px;
+  border: 1px solid rgba(0, 0, 0, 0.1019607843);
+  border-radius: 8px;
+}
+#product-description-container #technical-specifications-section #specifications-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 20px 0px;
+  cursor: pointer;
+}
+#product-description-container #technical-specifications-section #specifications-button span {
+  font-size: 14px;
+  font-weight: 400;
+}
+#product-description-container #technical-specifications-section #specifications-button svg {
+  transition: 0.3s ease-in-out all;
+}
+#product-description-container #technical-specifications-section #technical-specifications-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  transition: 0.3s ease-in-out all;
+}
+#product-description-container #technical-specifications-section #technical-specifications-list .specification-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: #364153;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1019607843);
+  margin: 0px 0px 12px;
+  padding: 0px 0px 8px;
+}
+#product-description-container #technical-specifications-section #technical-specifications-list .specification-item:last-child {
+  margin: 0px;
+}
+#product-description-container #technical-specifications-section #show-trigger:checked ~ #technical-specifications-list {
+  max-height: 400px;
+}
+#product-description-container #technical-specifications-section #show-trigger:not(:checked) ~ #technical-specifications-list {
+  max-height: 0px;
+}
+#product-description-container #technical-specifications-section #show-trigger:checked ~ #specifications-button svg {
+  transform: rotate(0deg);
+}
+#product-description-container #technical-specifications-section #show-trigger:not(:checked) ~ #specifications-button svg {
+  transform: rotate(180deg);
+}
 
 #relative-products-section {
   display: none;

@@ -100,8 +100,13 @@ export async function fillProductInformation()
         productDescriptionContainer.innerHTML = 
         `
             <h1 id="product-name-label">${product.name}</h1>
-            <div id="product-rating-container">${renderRating(product.rating)}</div>
-            <div id="products-reviews-count">Based on ${product.reviews_count} reviews</div>
+            <div id="product-rating-container">
+                <div id="product-star-rating">
+                    ${renderRating(product.rating)}
+                </div>
+                <span id = product-digital-rating>(${product.rating})</span>
+            </div>
+            <div id="product-reviews-count">Based on ${product.reviews_count} reviews</div>
             <div id="product-price-container">
             </div>
             <div id="key-highlights-section">
@@ -127,7 +132,10 @@ export async function fillProductInformation()
             </button>
             <div id="technical-specifications-section">
                 <input id="show-trigger" type="checkbox" style="display: none">
-                <label for="show-trigger">Technical Specifications</label>
+                <label id="specifications-button" for="show-trigger">
+                    <span>Technical Specifications</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-up-icon lucide-chevron-up"><path d="m18 15-6-6-6 6"/></svg>
+                </label>
                 <ul id="technical-specifications-list"></ul>
             </div>
         `
@@ -144,7 +152,7 @@ export async function fillProductInformation()
                 highlightItem.classList.add('highlight-item');
                 highlightItem.innerHTML = 
                 `
-                    ${key}:${productSpecifications[key]}
+                    ${key}: ${productSpecifications[key]}
                 `
                 highlightsList.appendChild(highlightItem);
 
@@ -156,6 +164,25 @@ export async function fillProductInformation()
             }   
         }
 
+        const productPriceContainer = document.getElementById('product-price-container');
+        if(product.discount === null)
+        {
+            productPriceContainer.innerHTML = 
+            `
+                <div id="product-price">$${product.price}</div>
+                <span>Free shipping</span>
+            `
+        }
+        else
+        {
+            productPriceContainer.innerHTML = 
+            `
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e7000b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-percent-icon lucide-badge-percent"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m15 9-6 6"/><path d="M9 9h.01"/><path d="M15 15h.01"/></svg>
+                <div id="discount-price">$${(product.price * (1 - product.discount)).toFixed(2)}</div>
+                <div id="old-price">$${product.price}</div>
+            `
+        }
+
         const specificationList = document.getElementById('technical-specifications-list');
         for(let key in productSpecifications)
         {
@@ -165,12 +192,12 @@ export async function fillProductInformation()
                 specificationItem.classList.add('specification-item');
                 specificationItem.innerHTML = 
                 `
-                    ${key}:${productSpecifications[key]}
+                    <span>${key}</span>
+                    <span>${productSpecifications[key]}</span>
                 `
                 specificationList.appendChild(specificationItem);
             }   
         }
-
     }
 }
 
