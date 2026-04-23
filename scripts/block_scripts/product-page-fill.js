@@ -1,5 +1,6 @@
 import { fillCardSection } from "./cards-section-fill.js";
 import { renderRating } from "./cards-section-fill.js";
+import { addProductToCart } from "./cart-functions.js";
 
 export async function fillProductInformation()
 {
@@ -216,29 +217,7 @@ export async function fillProductInformation()
 
         const addToCartButton = document.getElementById("add-to-cart-button");
         addToCartButton.addEventListener("click", e=>{
-            const cartStorage = JSON.parse(localStorage.getItem('cartStorage'));
-            const productIndex = cartStorage.products.findIndex(prod=> 
-                {
-                    return prod.product.id === product.id;
-                });
-
-            if(productIndex === -1)
-            {
-                const productInCartInfo = 
-                {
-                    product: product,
-                    quantity: currentQuantityCount
-                }
-                cartStorage.products.push(productInCartInfo);
-            }
-            else
-            {
-                cartStorage.products[productIndex].quantity += currentQuantityCount;
-            }
-
-            localStorage.setItem('cartStorage', JSON.stringify(cartStorage));
-            const event = new CustomEvent('cartUpdated');
-            window.dispatchEvent(event);
+            addProductToCart(product, currentQuantityCount);
         })
 
 

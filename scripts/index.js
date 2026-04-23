@@ -8,15 +8,9 @@ import { initProductSorting } from "./block_scripts/product_sort.js";
 import { initSearch } from "./block_scripts/search.js";
 import { initCategoryPath } from "./block_scripts/category-path.js";
 import { initCartProductCounter } from "./block_scripts/cart-product-quantity.js";
+import { initCartStorage } from "./block_scripts/cart-functions.js";
 
-if(!localStorage.getItem('cartStorage'))
-{
-    const cartStorage = {
-        products: []
-    }
-    localStorage.setItem('cartStorage', JSON.stringify(cartStorage));
-}
-
+initCartStorage();
 initSearch();
 initCartProductCounter();
 initCategoryPath();

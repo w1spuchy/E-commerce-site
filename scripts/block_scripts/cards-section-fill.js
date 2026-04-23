@@ -1,4 +1,5 @@
 import { filter } from "./filter.js";
+import { addProductToCart } from "./cart-functions.js";
 
 let cachedProducts = null;
 
@@ -210,7 +211,7 @@ export async function fillCardSection(sectionId, sortOrder, filterFunc)
 
             productCard.querySelector(".cart-button").addEventListener("click", e=>{
                 e.preventDefault();
-
+                addProductToCart(product, 1);
             })
 
             const cardPriceSection = productCard.querySelector(".product-price-section");
