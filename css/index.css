@@ -351,6 +351,28 @@ header {
   position: relative;
 }
 
+#header-cart-button {
+  position: relative;
+}
+
+#cart-product-counter {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: -5px;
+  right: -7px;
+  border: none;
+  border-radius: 50%;
+  background-color: #155dfc;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+}
+
 #burger-menu-button {
   display: none;
 }

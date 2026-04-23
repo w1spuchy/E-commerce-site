@@ -121,6 +121,28 @@ header {
   position: relative;
 }
 
+#header-cart-button {
+  position: relative;
+}
+
+#cart-product-counter {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: -5px;
+  right: -7px;
+  border: none;
+  border-radius: 50%;
+  background-color: #155dfc;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+}
+
 #burger-menu-button {
   display: none;
 }
@@ -956,7 +978,7 @@ main {
   justify-content: space-between;
   align-items: center;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   color: #364153;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1019607843);
   margin: 0px 0px 12px;
@@ -964,6 +986,7 @@ main {
 }
 #product-description-container #technical-specifications-section #technical-specifications-list .specification-item:last-child {
   margin: 0px;
+  border: none;
 }
 #product-description-container #technical-specifications-section #show-trigger:checked ~ #technical-specifications-list {
   max-height: 400px;

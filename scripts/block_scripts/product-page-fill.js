@@ -140,6 +140,7 @@ export async function fillProductInformation()
             </div>
         `
 
+
         const productSpecifications = product.specifications;
         
         const productPriceContainer = document.getElementById('product-price-container');
@@ -160,6 +161,7 @@ export async function fillProductInformation()
                 <div id="old-price">$${product.price}</div>
             `
         }
+
 
         const highlightsList = document.getElementById('highlights-list');
         let highlightsCount = 0;
@@ -182,6 +184,7 @@ export async function fillProductInformation()
                 }
             }   
         }
+
 
         let currentQuantityCount = 1;
         const quantityButtonsSection = document.getElementById("quantity-buttons-section");
@@ -210,6 +213,7 @@ export async function fillProductInformation()
             }
         })
 
+
         const addToCartButton = document.getElementById("add-to-cart-button");
         addToCartButton.addEventListener("click", e=>{
             const cartStorage = JSON.parse(localStorage.getItem('cartStorage'));
@@ -233,6 +237,8 @@ export async function fillProductInformation()
             }
 
             localStorage.setItem('cartStorage', JSON.stringify(cartStorage));
+            const event = new CustomEvent('cartUpdated');
+            window.dispatchEvent(event);
         })
 
 

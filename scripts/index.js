@@ -7,6 +7,7 @@ import { initClearFiltersButtons } from "./block_scripts/filter.js";
 import { initProductSorting } from "./block_scripts/product_sort.js";
 import { initSearch } from "./block_scripts/search.js";
 import { initCategoryPath } from "./block_scripts/category-path.js";
+import { initCartProductCounter } from "./block_scripts/cart-product-quantity.js";
 
 if(!localStorage.getItem('cartStorage'))
 {
@@ -16,6 +17,8 @@ if(!localStorage.getItem('cartStorage'))
     localStorage.setItem('cartStorage', JSON.stringify(cartStorage));
 }
 
+initSearch();
+initCartProductCounter();
 initCategoryPath();
 fillCardSection('all-products-section');
 initRangeSlider();
@@ -24,4 +27,3 @@ initSidebar();
 initCheckbox();
 initClearFiltersButtons();
 initProductSorting();
-initSearch();
