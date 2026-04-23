@@ -209,7 +209,32 @@ export async function fillProductInformation()
                 });
             }
         })
-        
+
+        const addToCartButton = document.getElementById("add-to-cart-button");
+        addToCartButton.addEventListener("click", e=>{
+            const cartStorage = JSON.parse(localStorage.getItem('cartStorage'));
+            const productIndex = cartStorage.products.findIndex(prod=> 
+                {
+                    return prod.product.id === product.id;
+                });
+
+            if(productIndex === -1)
+            {
+                const productInCartInfo = 
+                {
+                    product: product,
+                    quantity: currentQuantityCount
+                }
+                cartStorage.products.push(productInCartInfo);
+            }
+            else
+            {
+                cartStorage.products[productIndex].quantity += currentQuantityCount;
+            }
+
+            localStorage.setItem('cartStorage', JSON.stringify(cartStorage));
+        })
+
 
         const specificationList = document.getElementById('technical-specifications-list');
         for(let key in productSpecifications)
