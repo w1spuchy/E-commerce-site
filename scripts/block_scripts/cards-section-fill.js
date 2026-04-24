@@ -18,6 +18,9 @@ export async function fillCardSection(sectionId, sortOrder, filterFunc)
             case 'sort-by-name':
                 cachedProducts.products.sort((a,b) => a.name.localeCompare(b.name));
                 break;
+            case 'sort-by-name-rev':
+                cachedProducts.products.sort((a,b) => b.name.localeCompare(a.name));
+                break;
             case 'sort-by-price':
                 cachedProducts.products.sort((a,b) => (a.price * (1 - (a.discount ? a.discount : 0))) - (b.price * (1 - (b.discount ? b.discount : 0))));
                 break;

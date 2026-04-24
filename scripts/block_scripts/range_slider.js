@@ -16,7 +16,7 @@ export function initRangeSlider(){
     const maxRanges = Array.from(rangeInputs).filter(input => input.classList.contains("range-max"));
     const priceMinOutputs = priceOutputs.filter(out => out.classList.contains("price-min-value"));
     const priceMaxOutputs = priceOutputs.filter(out => out.classList.contains("price-max-value"));
-    const priceGap = 300;
+    const priceGap = 10;
     
     priceOutputs.forEach(output=>{
         if(output.classList.contains("price-min-value")){
@@ -62,8 +62,8 @@ export function initRangeSlider(){
                 priceMinOutputs.forEach(min => min.innerHTML = "$" + minVal);
                 priceMaxOutputs.forEach(max => max.innerHTML = "$" + maxVal);
                 ranges.forEach(progress => {
-                    progress.style.left = (minVal/minRanges[0].max) * 100 + "%";
-                    progress.style.right = 100 - (maxVal/maxRanges[0].max) * 100 + "%";
+                    progress.style.left = `calc(${(minVal/minRanges[0].max) * 100 + "%"} - ${((minVal/minRanges[0].max)) * 16}px)`;
+                    progress.style.right = `calc(${100 - (maxVal/maxRanges[0].max) * 100 + "%"} - ${(1 -  maxVal/maxRanges[0].max) * 16}px)`;
                 });
                 if(e.target.className === "range-min")
                 {
