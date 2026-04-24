@@ -65,7 +65,7 @@ function fillOrderSection()
         const totalOrderPriceElement = priceContainer.querySelector('.total-order-price');
         const priceCoeff = product.product.discount === null ? 1 : 1 - product.product.discount; 
         const unitPrice = (product.product.price * priceCoeff).toFixed(2);
-        const totalOrderPrice = unitPrice * product.quantity;
+        const totalOrderPrice = (unitPrice * product.quantity).toFixed(2);
         unitPriceElement.innerHTML = `$${unitPrice} each`;
         totalOrderPriceElement.innerHTML = `$${totalOrderPrice}`;
         window.addEventListener(`cartProductUpdated-${product.product.id}`, e=>{
@@ -111,6 +111,35 @@ function fillOrderSection()
             fillCartPage();
         });
 
+
         ordersContainer.appendChild(orderItem);
     });
+
+    updateOrderPrice();
+    window.addEventListener('cartUpdated',e=>{
+        updateOrderPrice();
+    })
+
+}
+
+function updateOrderPrice()
+{
+    const cartStorage = JSON.parse(localStorage.getItem('cartStorage'));
+    const subtotalPriceElement = document.getElementById('subtotal-price');
+    const taxValueElement = document.getElementById('tax-value');
+    const totalPriceElement = document.getElementById('total-price');
+
+    const subtotalPrice = Array.from(cartStorage.products).reduce((res,curr)=>{
+        const priceCoeff = curr.product.discount === null ? 1 : 1 - curr.product.discount; 
+        const unitPrice = (curr.product.price * priceCoeff).toFixed(2);
+        const totalOrderPrice = unitPrice * curr.quantity;
+        return res += totalOrderPrice;
+    }, 0).toFixed(2);
+    subtotalPriceElement.innerHTML = "$" + subtotalPrice;
+
+    const taxValue = (subtotalPrice * 0.08).toFixed(2);
+    taxValueElement.innerHTML = "$" + taxValue; 
+
+    const totalPrice = (parseFloat(subtotalPrice) + parseFloat(taxValue)).toFixed(2);
+    totalPriceElement.innerHTML = "$" + totalPrice;
 }

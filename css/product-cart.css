@@ -715,6 +715,11 @@ h1 {
   font-size: 16px;
   font-weight: 600;
 }
+#order-information-section #order-summary #order-price-section .total-price-container #total-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #155dfb;
+}
 #order-information-section #order-summary #promo-code-section {
   display: flex;
   flex-direction: column;
