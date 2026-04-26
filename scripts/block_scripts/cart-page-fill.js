@@ -1,6 +1,7 @@
 import { getCartProductQuantity } from "./cart-product-quantity.js";
 import { updateProductQuantityInCart } from "./cart-functions.js";
 import { deleteProductFromCart } from "./cart-functions.js";
+let discount = null;
 
 
 export function fillCartPage()
@@ -120,6 +121,25 @@ function fillOrderSection()
         updateOrderPrice();
     })
 
+    const promoSection = document.getElementById('promo-code-section');
+    const discountContainer = document.getElementById('discount-container');
+    const discountTitle = discountContainer.querySelector('.price-title');
+    const promoInput = document.getElementById('promo-input');
+    const applyPromoButton = document.getElementById('apply-promo-button');
+
+    applyPromoButton.addEventListener('click', e =>{
+        if(promoInput.value === 'SAVE10')
+        {
+            discountContainer.style.display = 'flex';
+            discountTitle.innerHTML = `Discount(${promoInput.value})`;
+            discount = 0.1;
+            promoInput.setAttribute('disabled', true);
+            applyPromoButton.setAttribute('disabled', true);
+            promoSection.querySelector('p').style = "color: #00a63e"
+            promoSection.querySelector('p').innerHTML = "Promo code applied successfully!";
+            updateOrderPrice();
+        }
+    })
 }
 
 function updateOrderPrice()
@@ -127,6 +147,7 @@ function updateOrderPrice()
     const cartStorage = JSON.parse(localStorage.getItem('cartStorage'));
     const subtotalPriceElement = document.getElementById('subtotal-price');
     const taxValueElement = document.getElementById('tax-value');
+    const discountValueElement = document.getElementById('discount-value');
     const totalPriceElement = document.getElementById('total-price');
 
     const subtotalPrice = Array.from(cartStorage.products).reduce((res,curr)=>{
@@ -140,6 +161,13 @@ function updateOrderPrice()
     const taxValue = (subtotalPrice * 0.08).toFixed(2);
     taxValueElement.innerHTML = "$" + taxValue; 
 
-    const totalPrice = (parseFloat(subtotalPrice) + parseFloat(taxValue)).toFixed(2);
-    totalPriceElement.innerHTML = "$" + totalPrice;
+    let totalPrice = (parseFloat(subtotalPrice) + parseFloat(taxValue));
+    if(discount != undefined)
+    {
+        discountValueElement.innerHTML = `-${(subtotalPrice * discount).toFixed(2)}`;
+        totalPrice -= (subtotalPrice * discount);
+    }
+
+    console.log(typeof(totalPrice));
+    totalPriceElement.innerHTML = "$" + totalPrice.toFixed(2);
 }

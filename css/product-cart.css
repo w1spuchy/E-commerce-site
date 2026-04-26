@@ -704,6 +704,13 @@ h1 {
 #order-information-section #order-summary #order-price-section .price-container .price-title {
   color: #364153;
 }
+#order-information-section #order-summary #order-price-section #discount-container {
+  display: none;
+  color: #00a63e;
+}
+#order-information-section #order-summary #order-price-section #discount-container .price-title {
+  color: #00a63b;
+}
 #order-information-section #order-summary #order-price-section .total-price-container {
   display: flex;
   flex-direction: row;
@@ -755,6 +762,10 @@ h1 {
   border-radius: 8px;
   cursor: pointer;
   transition: 0.3s ease background-color;
+}
+#order-information-section #order-summary #promo-code-section #promo-input-container button:disabled {
+  background-color: #8e949c;
+  cursor: not-allowed;
 }
 #order-information-section #order-summary #promo-code-section #promo-input-container button:hover {
   background-color: #161d29;

@@ -129,7 +129,17 @@ h1
                 {
                     color: $light-text-color;
                 }
-    
+            }
+
+            #discount-container
+            {
+                display: none;
+                color: #00a63e;
+
+                .price-title
+                {
+                    color: #00a63b;
+                }
             }
             
             .total-price-container
@@ -197,6 +207,12 @@ h1
                     border-radius: 8px;
                     cursor: pointer;
                     transition: 0.3s ease background-color;
+                }
+
+                button:disabled 
+                {
+                    background-color: #8e949c;
+                    cursor: not-allowed;
                 }
 
                 button:hover
