@@ -3,7 +3,7 @@
   "rewrites": [
     {
       "source": "/",
-      "destination": "/pages/index.html"
+      "destination": "client/pages/index.html"
     }
   ]
 }
