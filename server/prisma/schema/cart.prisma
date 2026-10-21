@@ -1,0 +1,29 @@
+model Cart {
+    id          Int  @id @default(autoincrement()) @db.UnsignedInt
+    userId      Int  @unique @map("user_id") @db.UnsignedInt
+    promoCodeId Int? @map("promo_code_id") @db.UnsignedInt
+
+    promoCode PromoCode? @relation(fields: [promoCodeId], references: [id], onDelete: SetNull)
+    user      User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+    createdAt DateTime   @default(now()) @map("created_at")
+    updatedAt DateTime   @updatedAt @map("updated_at")
+    cartItems CartItem[]
+
+    @@map("carts")
+}
+
+model CartItem {
+    cartId    Int @map("cart_id") @db.UnsignedInt
+    productId Int @map("product_id") @db.UnsignedInt
+    quantity  Int @db.UnsignedInt
+
+    cart    Cart    @relation(fields: [cartId], references: [id], onDelete: Cascade)
+    product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+    createdAt DateTime @default(now()) @map("created_at")
+    updatedAt DateTime @updatedAt @map("updated_at")
+
+    @@id([cartId, productId])
+    @@map("cart_items")
+}

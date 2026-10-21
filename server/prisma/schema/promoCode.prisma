@@ -1,0 +1,12 @@
+model PromoCode {
+    id                 Int     @id @default(autoincrement()) @db.UnsignedInt
+    code               String  @unique @db.VarChar(70)
+    discountPercentage Int     @map("discount_percentage") @db.UnsignedInt
+    isActive           Boolean @default(true)
+
+    createdAt DateTime @default(now()) @map("created_at")
+    updatedAt DateTime @updatedAt @map("updated_at")
+    carts     Cart[]
+
+    @@map("promo_codes")
+}
