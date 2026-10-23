@@ -17,15 +17,8 @@ app.use("/api/products", productRoutes)
 app.use("/api/cart", cartRoutes)
 
 
-const PORT = process.env.port;
+const PORT = Number(process.env.PORT ?? 3000);
 app.listen(PORT, () => {
-    try
-    {
         console.log(`Server running on port: ${PORT}`);
-    }
-    catch(e)
-    {
-        console.log(e);
-    }
 });
 
