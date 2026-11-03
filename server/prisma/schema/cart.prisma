@@ -3,8 +3,8 @@ model Cart {
     userId      Int  @unique @map("user_id") @db.UnsignedInt
     promoCodeId Int? @map("promo_code_id") @db.UnsignedInt
 
-    promoCode PromoCode? @relation(fields: [promoCodeId], references: [id], onDelete: SetNull)
     user      User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+    promoCode PromoCode? @relation(fields: [promoCodeId], references: [id], onDelete: SetNull)
 
     createdAt DateTime   @default(now()) @map("created_at")
     updatedAt DateTime   @updatedAt @map("updated_at")

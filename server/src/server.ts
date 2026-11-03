@@ -1,7 +1,8 @@
 import express from "express"
 import "dotenv/config"
-import productRoutes from "./routes/products.routes.js";
+import productRoutes from "./routes/products.routes.js"
 import cartRoutes from "./routes/cart.routes.js"
+import authRouter from "./routes/auth.routes.js"
 
 
 const app = express();
@@ -13,8 +14,9 @@ app.get("/status", (req, res) => {
 })
 
 
-app.use("/api/products", productRoutes)
-app.use("/api/cart", cartRoutes)
+app.use("/api/products", productRoutes);
+app.use("/api/cart", cartRoutes);
+app.use("/api/auth", authRouter);
 
 
 const PORT = Number(process.env.PORT ?? 3000);
